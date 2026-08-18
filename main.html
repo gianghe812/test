@@ -7,6 +7,9 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Pacifico&display=swap" rel="stylesheet">
 
+    <!-- =================================================================
+         ⚙️ BẢNG ĐIỀU KHIỂN TỔNG HỢP & GHI CHÚ HƯỚNG DẪN SỬ DỤNG
+    ================================================================== -->
     <script>
         const CAU_HINH = {
             matKhau: "13092012", 
@@ -56,7 +59,7 @@
     </style>
 
     <style>
-        /* === RESET & BASE CỦA THƯ GỐC === */
+        /* === RESET & CỐT LÕI BỨC THƯ GỐC === */
         *, *::before, *::after { box-sizing: border-box; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; position: fixed; overscroll-behavior: none; transition: background-color 1.5s ease; }
         body { background-color: var(--bg-body); font-family: 'Quicksand', sans-serif; display: flex; justify-content: center; align-items: center; }
@@ -115,20 +118,9 @@
 
         #vung-ban-phim { display: none; opacity: 0; transition: opacity 1s ease; margin: 0 auto; }
         .ban-phim { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 5px; }
-        
-        .nut-so { 
-            width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--border-nut-so); 
-            background: var(--bg-nut-so); color: var(--text-pass); font-size: 28px; font-weight: 600; 
-            font-family: 'Quicksand', sans-serif; cursor: pointer; display: flex; justify-content: center; 
-            align-items: center; touch-action: manipulation; position: relative; 
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); 
-            backdrop-filter: blur(8px); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); 
-        }
-        .nut-so::after { content: ''; position: absolute; inset: -10px; border-radius: 50%; }
-        .nut-so:hover { background: rgba(255, 255, 255, 0.3); transform: scale(1.04); box-shadow: 0 8px 25px var(--shadow-tim); border-color: var(--mau-chu-dao); }
+        .nut-so { width: 72px; height: 72px; border-radius: 50%; border: 2px solid var(--border-nut-so); background: var(--bg-nut-so); color: var(--text-pass); font-size: 28px; font-weight: 600; font-family: 'Quicksand', sans-serif; cursor: pointer; display: flex; justify-content: center; align-items: center; touch-action: manipulation; position: relative; box-shadow: 0 4px 15px rgba(0,0,0,0.1); backdrop-filter: blur(8px); transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1); }
         .nut-so:active { background: rgba(255, 255, 255, 0.45); transform: scale(0.92) translateY(3px); box-shadow: inset 0 5px 15px rgba(0,0,0,0.2); color: var(--mau-chu-dao); border-color: transparent; }
         body.theme-night .nut-so:active { background: rgba(255, 255, 255, 0.2); box-shadow: inset 0 5px 15px rgba(0,0,0,0.5); color: #fff; }
-        
         .xoa-so { border: 2px solid var(--border-nut-so); font-size: 16px; font-weight: 700; background: rgba(255, 105, 180, 0.2); }
         body.theme-night .xoa-so { background: rgba(255, 117, 143, 0.15); }
         .xoa-so:hover { background: var(--mau-chu-dao); color: white; border-color: var(--mau-chu-dao); }
@@ -174,7 +166,7 @@
         .btn-chuyen:active:not(:disabled) { transform: translateY(1px); box-shadow: 0 4px 15px var(--shadow-tim); }
         .btn-chuyen:disabled { background: var(--mau-nut-lui); box-shadow: none; cursor: not-allowed; opacity: 0.6; }
 
-        #khoi-trai-tim-cuoi { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 350px; height: 350px; opacity: 0; z-index: 100; pointer-events: none; background-color: var(--bg-tim-cuoi); box-shadow: 0 10px 50px var(--shadow-tim); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"); -webkit-mask-size: cover; mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"); mask-size: cover;}
+        #khoi-trai-tim-cuoi { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%) scale(0); width: 350px; height: 350px; opacity: 0; z-index: 100; pointer-events: none; background-color: var(--bg-tim-cuoi); box-shadow: 0 10px 50px var(--shadow-tim); -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"); -webkit-mask-size: cover; mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z'/%3E%3C/svg%3E"); mask-size: cover; mask-position: center; mask-repeat: no-repeat; }
         #vung-chua-anh-tim { position: absolute; inset: 0; }
         .anh-trong-tim { position: absolute; object-fit: cover; border: 4px solid rgba(255,255,255,0.95); border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,0.3); opacity: 0; transform: translate(-50%, -50%) scale(0) rotate(0deg); transition: all 1s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
         #khoi-trai-tim-cuoi.hien-len { opacity: 1; transform: translate(-50%, -50%) scale(1); animation: timDap 1.5s infinite alternate ease-in-out 1.5s; transition: all 1.5s cubic-bezier(0.175, 0.885, 0.32, 1.275), background-color 1.5s ease; }
@@ -196,7 +188,7 @@
         }
 
         /* =====================================================================
-           🌟 CSS CHATTIME STUDIO & RECEIVER VIEW (CANVA-STYLE)
+           🌟 CSS CHATTIME STUDIO & THIẾT KẾ (BẢN PRO HOÀN HẢO)
         ======================================================================== */
         
         #btn-chattime {
@@ -204,15 +196,20 @@
             background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.4);
             backdrop-filter: blur(10px); color: var(--mau-chu-dao); font-family: 'Quicksand', sans-serif;
             padding: 10px 20px; border-radius: 30px; font-weight: 700; cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none; opacity: 0; transition: opacity 1s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none; opacity: 0; transition: opacity 0.8s;
             animation: pulseBtnCT 2s infinite;
         }
         body.theme-night #btn-chattime { background: rgba(0, 0, 0, 0.4); color: #fff; border-color: rgba(255,255,255,0.2);}
         #btn-chattime:hover { background: var(--mau-chu-dao); color: #fff; border-color: transparent; transform: scale(1.05); }
         @keyframes pulseBtnCT { 0% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0.4); } 70% { box-shadow: 0 0 0 15px rgba(255, 77, 109, 0); } 100% { box-shadow: 0 0 0 0 rgba(255, 77, 109, 0); } }
 
-        #chattime-modal { position: fixed; inset: 0; z-index: 100000; display: none; opacity: 0; background: rgba(10, 5, 15, 0.85); backdrop-filter: blur(20px); justify-content: center; align-items: center; transition: opacity 0.5s; font-family: 'Quicksand', sans-serif; color: #fff; }
+        #chattime-modal { position: fixed; inset: 0; z-index: 100000; display: none; opacity: 0; background: rgba(10, 5, 15, 0.85); backdrop-filter: blur(20px); justify-content: center; align-items: center; transition: 0.5s; font-family: 'Quicksand'; color: #fff; }
         .ct-container { width: 90%; max-width: 950px; background: rgba(255, 255, 255, 0.05); border: 1px solid rgba(255,255,255,0.1); border-radius: 24px; padding: 25px; display: flex; flex-direction: column; max-height: 95vh; position: relative; }
+        
+        /* Nút Close mới thanh lịch */
+        .ct-btn-close { position: absolute; top: 15px; right: 20px; width: 32px; height: 32px; background: rgba(255,255,255,0.1); border: none; color: #fff; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 1000; display: flex; justify-content: center; align-items: center; transition: background 0.3s; }
+        .ct-btn-close:hover { background: #ff4d6d; }
+
         .ct-header { font-size: 22px; font-weight: 700; text-align: center; margin-bottom: 20px; color: var(--mau-chu-dao); }
         .ct-step { display: none; flex-direction: column; flex: 1; overflow-y: auto; padding-right: 5px;}
         .ct-step::-webkit-scrollbar { width: 5px; } .ct-step::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.2); border-radius: 5px; }
@@ -222,108 +219,112 @@
         textarea.ct-input { width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; font-family: inherit; font-size: 16px; padding: 15px; resize: none; margin-bottom: 5px; outline: none; }
         .ct-label { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #ddd; }
         .ct-radio-group { display: flex; gap: 15px; margin-bottom: 15px; }
-        input[type="datetime-local"].ct-input, select.ct-select, input[type="text"].ct-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: #fff; padding: 10px; outline: none; margin-bottom: 12px; font-family: 'Quicksand', sans-serif; }
+        input[type="datetime-local"].ct-input, select.ct-select, input[type="text"].ct-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: #fff; padding: 10px; outline: none; margin-bottom: 12px; font-family: 'Quicksand'; }
         .ct-flex-row { display: flex; gap: 15px; margin-bottom: 8px; } .ct-flex-row > div { flex: 1; }
         .ct-color-picker { width: 100%; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(0,0,0,0.3); cursor: pointer; padding: 2px;}
 
-        /* Nút Upload Fixed */
+        /* Upload Nút & Trạng thái ĐÃ FIX: Không bị đè nút */
         .ct-file-wrap { margin-bottom: 12px; display: flex; flex-direction: column;}
         .ct-file-btn { display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border: 1px dashed rgba(255,255,255,0.3); padding: 10px 15px; border-radius: 10px; cursor: pointer; font-size: 14px; width: 100%; transition: 0.3s;}
         .ct-file-btn:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
         input[type="file"] { display: none; }
-        .ct-file-status { display: none; background: rgba(0,255,204,0.1); border: 1px solid rgba(0,255,204,0.3); padding: 10px 15px; border-radius: 10px; justify-content: space-between; align-items: center; font-size: 14px; color: #00ffcc; width: 100%;}
-        .ct-file-status button { background: none; border: none; color: #ff4d6d; font-weight: bold; cursor: pointer; font-size: 18px; outline: none; padding: 0 5px;}
+        .ct-file-status { display: none; background: rgba(0,255,204,0.1); border: 1px solid rgba(0,255,204,0.3); padding: 10px 15px; border-radius: 10px; justify-content: space-between; align-items: center; font-size: 14px; color: #00ffcc; width: 100%; }
+        .ct-file-status button { background: none; border: none; color: #ff4d6d; font-weight: bold; cursor: pointer; font-size: 18px; line-height: 1; padding: 0 5px;}
 
         .ct-footer { display: flex; justify-content: space-between; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
         .ct-btn { padding: 10px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; border: none; font-family: 'Quicksand'; transition: 0.3s;}
         .ct-btn-back { background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.2); }
         .ct-btn-next { background: var(--mau-chu-dao); color: #fff; }
         .ct-btn-next:hover { transform: scale(1.05); }
-        .ct-btn-close { position: absolute; top: 15px; right: 15px; background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; z-index: 10;}
 
-        /* KHU VỰC PREVIEW (Bảng Vẽ Canvas Canva-style) */
-        .ct-preview-area { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center;}
-        .ct-preview-box { width: 320px; height: 380px; background: #2b1c27; border-radius: 15px; overflow: hidden; position: relative; border: 1px solid rgba(255,255,255,0.2); margin-bottom: 10px; touch-action: none;}
+        /* KHU VỰC PREVIEW (Bảng Vẽ Canvas) ĐÃ FIX TỰ CHỈNH HÌNH DÁNG */
+        .ct-preview-area { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;}
         
+        .ct-preview-box { background: #2b1c27; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); margin: 0 auto 15px auto; touch-action: none; transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);}
+        .ct-preview-box.flat { width: 320px; height: 420px; border-radius: 20px; }
+        .ct-preview-box.book { width: 320px; height: 420px; border-radius: 5px 15px 15px 5px; border-left: 18px solid rgba(0,0,0,0.6); }
+        .ct-preview-box.env { width: 320px; height: 220px; border-radius: 8px; border-bottom: 2px solid rgba(0,0,0,0.4); }
+
         #ct-pbox-bg { position: absolute; inset:0; z-index: 1;}
 
         /* Snap lines */
         .snap-line-x { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #ff4d6d; z-index: 50; display: none; pointer-events: none;}
         .snap-line-y { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: #ff4d6d; z-index: 50; display: none; pointer-events: none;}
 
-        /* Wrapper của Đối tượng (Ảnh/Text) để có Bounding Box */
-        .ct-node-wrapper { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: grab; user-select: none; z-index: 20; touch-action: none; display: flex; justify-content: center; align-items: center;}
+        /* Wrapper của Đối tượng (Ảnh/Text) để có Bounding Box Chuẩn */
+        .ct-node-wrapper { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); cursor: grab; user-select: none; z-index: 20; touch-action: none; border: 1px dashed transparent; padding: 2px;}
         .ct-node-wrapper:active { cursor: grabbing; }
+        .ct-node-wrapper:hover { border-color: rgba(255,255,255,0.3); }
+        .ct-node-wrapper.selected { border: 2px solid #8c52ff; }
         
-        /* Bounding Box Styling (Tím) */
-        .ct-node-wrapper.selected { outline: 2px solid #8c52ff; }
-        
-        .ct-handle { position: absolute; width: 12px; height: 12px; background: #fff; border: 2px solid #8c52ff; border-radius: 50%; display: none; z-index: 10;}
+        .ct-handle { position: absolute; width: 14px; height: 14px; background: #fff; border: 2px solid #8c52ff; border-radius: 50%; display: none; z-index: 30;}
         .ct-node-wrapper.selected .ct-handle { display: block; }
         
-        .ct-handle.tl { top: -6px; left: -6px; cursor: nwse-resize; }
-        .ct-handle.tr { top: -6px; right: -6px; cursor: nesw-resize; }
-        .ct-handle.bl { bottom: -6px; left: -6px; cursor: nesw-resize; }
-        .ct-handle.br { bottom: -6px; right: -6px; cursor: nwse-resize; }
+        .ct-handle.tl { top: -7px; left: -7px; cursor: nwse-resize; }
+        .ct-handle.tr { top: -7px; right: -7px; cursor: nesw-resize; }
+        .ct-handle.bl { bottom: -7px; left: -7px; cursor: nesw-resize; }
+        .ct-handle.br { bottom: -7px; right: -7px; cursor: nwse-resize; }
         
-        .ct-handle.ml { top: 50%; left: -6px; transform: translateY(-50%); border-radius: 4px; height: 20px; cursor: ew-resize;}
-        .ct-handle.mr { top: 50%; right: -6px; transform: translateY(-50%); border-radius: 4px; height: 20px; cursor: ew-resize;}
+        /* Nút kéo ngang cho Text để nó xuống dòng */
+        .ct-handle.ml { top: 50%; left: -7px; transform: translateY(-50%); border-radius: 4px; height: 24px; cursor: ew-resize;}
+        .ct-handle.mr { top: 50%; right: -7px; transform: translateY(-50%); border-radius: 4px; height: 24px; cursor: ew-resize;}
+        #ct-img-wrapper .ct-handle.ml, #ct-img-wrapper .ct-handle.mr { display: none; }
 
-        .ct-rotate-handle { position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2v3a7 7 0 1 0 7 7h3a10 10 0 1 1-10-10z" fill="%23000"/></svg>') center center no-repeat; border-radius: 50%; border: 1px solid #ccc; cursor: grab; display: none; z-index: 10; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
+        .ct-rotate-handle { position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2v3a7 7 0 1 0 7 7h3a10 10 0 1 1-10-10z" fill="%23000"/></svg>') center center no-repeat; border-radius: 50%; border: 1px solid #ccc; cursor: grab; display: none; z-index: 30; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
         .ct-node-wrapper.selected .ct-rotate-handle { display: block; }
         .ct-rotate-handle:active { cursor: grabbing;}
 
         /* Nội dung bên trong Node */
-        #ct-preview-img { display: none; width: 150px; height: auto; pointer-events: none;}
-        #preview-text { color: #ffccd5; white-space: pre-wrap; word-break: break-word; pointer-events: none; padding: 10px; width: 250px;}
+        #ct-preview-img { display: none; width: 100%; height: 100%; pointer-events: none; object-fit: contain;}
+        #preview-text { color: #ffccd5; white-space: pre-wrap; word-break: break-word; pointer-events: none; padding: 5px; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; line-height: 1.4;}
 
         .ct-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); z-index: 5; pointer-events: none;}
         .ct-overlay.darken { background: rgba(0,0,0,0.4); }
         .ct-link-box { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; color: var(--mau-chu-dao); word-break: break-all; margin: 15px 0;}
 
-        /* Giao diện Người nhận (Receiver View) */
-        #receiver-view { position: fixed; inset: 0; z-index: 100001; display: none; background: #0f0c13; color: #fff; font-family: 'Quicksand', sans-serif; justify-content: center; align-items: center; flex-direction: column; overflow: hidden;}
+        /* GIAO DIỆN NGƯỜI NHẬN - CLICK ĐỂ MỞ & 3 KIỂU THIỆP */
+        #receiver-view { position: fixed; inset: 0; z-index: 100001; display: none; background: #0f0c13; color: #fff; font-family: 'Quicksand'; justify-content: center; align-items: center; flex-direction: column; overflow: hidden;}
         .rv-wait-screen { text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center; transition: opacity 0.5s; }
         .rv-icon { font-size: 60px; margin-bottom: 20px; animation: floatIcon 3s ease-in-out infinite; }
         @keyframes floatIcon { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
         .rv-title { font-size: 24px; font-weight: 700; margin-bottom: 10px; }
-        .rv-subtitle { font-size: 16px; color: #aaa; margin-bottom: 30px; max-width: 300px;}
-        .rv-btn-open { background: linear-gradient(45deg, #ff4d6d, #c9184a); border: none; padding: 15px 40px; border-radius: 30px; color: #fff; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: 0 10px 30px rgba(255,77,109,0.4); transition: 0.3s; font-family: 'Quicksand', sans-serif;}
-        .rv-btn-open:hover { transform: scale(1.05); }
+        .rv-btn-open { background: linear-gradient(45deg, #ff4d6d, #c9184a); border: none; padding: 15px 40px; border-radius: 30px; color: #fff; font-weight: 700; font-size: 18px; cursor: pointer; box-shadow: 0 10px 30px rgba(255,77,109,0.4); margin-top:20px;}
         .rv-close { position: absolute; top: 15px; right: 15px; background: rgba(0,0,0,0.5); border: none; color: #fff; width: 35px; height: 35px; border-radius: 50%; font-size: 18px; cursor: pointer; z-index: 100; display: none;}
 
-        /* CONTAINER CHỨA THIỆP ĐỘNG */
         #rv-dynamic-container { display: none; position: relative; width: 100%; height: 100%; justify-content: center; align-items: center; perspective: 1500px;}
+        
+        #rv-hint { position: absolute; top: 15%; color: #fff; font-size: 20px; font-weight: bold; animation: bounceHint 1.5s infinite; z-index: 50; pointer-events: none;}
+        @keyframes bounceHint { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-15px)} }
 
-        /* STYLE 1: FLAT (Trượt) */
-        .rv-style-flat { width: 90%; max-width: 400px; height: 80vh; max-height: 600px; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.8); position: relative; overflow: hidden; background: #2b1c27; transform: translateY(100vh); opacity: 0; transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s;}
-        .rv-style-flat.is-open { transform: translateY(0); opacity: 1; }
+        /* STYLE 1: FLAT (Thiệp Phẳng trượt lật) */
+        .rv-style-flat { width: 320px; height: 450px; border-radius: 20px; position: relative; cursor: pointer; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .rv-fc-front, .rv-fc-back { position: absolute; inset:0; backface-visibility: hidden; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6);}
+        .rv-fc-back { transform: rotateY(180deg); }
+        .rv-style-flat.is-open { transform: rotateY(-180deg) scale(1.1); cursor: default;}
 
         /* STYLE 2: BOOK (Sổ lật 3D) */
-        .rv-style-book { width: 320px; height: 450px; position: relative; transform-style: preserve-3d; transform: scale(0.5); opacity: 0; transition: transform 1s cubic-bezier(0.175, 0.885, 0.32, 1.275), opacity 1s; }
-        .rv-style-book.is-open { transform: scale(1); opacity: 1; }
-        .rv-sb-cover { position: absolute; inset: 0; z-index: 5; transform-origin: left center; transform-style: preserve-3d; transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1); border-radius: 15px; box-shadow: 5px 5px 25px rgba(0,0,0,0.5);}
-        .rv-style-book.is-open.did-flip .rv-sb-cover { transform: rotateY(-130deg); box-shadow: 20px 0 30px rgba(0,0,0,0.3); }
-        .rv-sb-front, .rv-sb-back { position: absolute; inset:0; backface-visibility: hidden; border-radius: 15px; overflow: hidden; }
-        .rv-sb-back { background: #fffcf8; transform: rotateY(180deg); }
-        .rv-sb-inside { position: absolute; inset:0; z-index: 1; border-radius: 15px; box-shadow: inset 0 0 20px rgba(0,0,0,0.5); overflow: hidden; background: #2b1c27;}
+        .rv-style-book { width: 320px; height: 450px; position: relative; perspective: 1500px; cursor: pointer; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .rv-bc-inside { position: absolute; inset: 0; border-radius: 5px 15px 15px 5px; overflow: hidden; box-shadow: 0 15px 40px rgba(0,0,0,0.5);}
+        .rv-bc-cover { position: absolute; inset: 0; border-radius: 5px 15px 15px 5px; transform-origin: left; transition: transform 1.5s cubic-bezier(0.25, 0.8, 0.25, 1); border-left: 18px solid rgba(0,0,0,0.4); z-index: 5; box-shadow: 5px 5px 20px rgba(0,0,0,0.4); overflow: hidden;}
+        .rv-style-book.is-open { transform: translateX(40px) scale(1.05); cursor: default;}
+        .rv-style-book.is-open .rv-bc-cover { transform: rotateY(-140deg); box-shadow: 20px 0 30px rgba(0,0,0,0.3); }
 
-        /* STYLE 3: ENVELOPE (Phong bì giống thư gốc) */
-        .rv-style-env { position: relative; width: 320px; height: 210px; perspective: 1000px; transform: scale(0.5); opacity: 0; transition: transform 1s, opacity 1s; margin-top: 150px;}
-        .rv-style-env.is-open { transform: scale(1.1); opacity: 1; }
-        .rv-se-back { position: absolute; inset: 0; background: #ff8fa3; border-radius: 0 0 12px 12px; z-index: 1;}
-        .rv-se-paper { position: absolute; left: 12px; right: 12px; top: 12px; bottom: 12px; background: #fff; z-index: 2; overflow: hidden; transition: transform 1s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 0 15px rgba(0,0,0,0.1); border-radius: 8px;}
-        .rv-se-front { position: absolute; bottom: 0; left: 0; z-index: 3; border-left: 160px solid #ffb3c6; border-right: 160px solid #ffb3c6; border-bottom: 115px solid #ffc2d1; border-top: 95px solid transparent; border-radius: 0 0 12px 12px; pointer-events: none;}
-        .rv-se-flap { position: absolute; top: 0; left: 0; z-index: 4; border-top: 120px solid #ff758f; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 90px solid transparent; transform-origin: top; transition: transform 0.6s; pointer-events: none;}
-        .rv-style-env.is-open.did-flip .rv-se-flap { transform: rotateX(180deg); z-index: 1; }
-        .rv-style-env.is-open.did-flip .rv-se-paper { transform: translateY(-160px) scale(1.15); z-index: 5; height: 350px;}
+        /* STYLE 3: ENVELOPE (Phong bì rút) */
+        .rv-style-env { width: 340px; height: 230px; position: relative; perspective: 1000px; cursor: pointer; transition: 1s; margin-top: 100px;}
+        .rv-ec-back { position: absolute; inset: 0; border-radius: 0 0 10px 10px; z-index: 1;}
+        .rv-ec-paper { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; z-index: 2; overflow: hidden; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);}
+        .rv-ec-front { position: absolute; bottom: 0; left: 0; border-left: 170px solid rgba(255,255,255,0.2); border-right: 170px solid rgba(255,255,255,0.2); border-bottom: 130px solid rgba(0,0,0,0.1); border-top: 100px solid transparent; z-index: 3;}
+        .rv-ec-flap { position: absolute; top: 0; left: 0; border-top: 130px solid rgba(0,0,0,0.2); border-left: 170px solid transparent; border-right: 170px solid transparent; border-bottom: 100px solid transparent; transform-origin: top; transition: transform 0.8s; z-index: 4;}
+        .rv-style-env.is-open { cursor: default; }
+        .rv-style-env.is-open .rv-ec-flap { transform: rotateX(180deg); z-index: 1; }
+        .rv-style-env.is-open .rv-ec-paper { transform: translateY(-190px) scale(1.15); z-index: 5; height: 350px; }
 
-        /* Component hiển thị chung trong thiệp */
+        /* Lớp dùng chung cho thiệp ở Receiver */
         .rv-layer-bg { position: absolute; inset:0; overflow: hidden;}
-        .rv-layer-bg img { position: absolute; transform-origin: center;}
+        .rv-layer-bg img { position: absolute; transform: translate(-50%, -50%); transform-origin: center;}
         .rv-layer-overlay { position: absolute; inset:0; z-index: 1; pointer-events: none;}
         .rv-layer-overlay.darken { background: rgba(0,0,0,0.4); }
-        .rv-layer-text { position: absolute; z-index: 2; white-space: pre-wrap; word-break: break-word; transform-origin: center;}
+        .rv-layer-text { position: absolute; z-index: 2; white-space: pre-wrap; word-break: break-word; transform-origin: center; display: flex; flex-direction: column; justify-content: center;}
 
         .ct-confetti { position: absolute; top: -10px; width: 10px; height: 10px; z-index: 100005; animation: fallConfetti linear forwards; }
         @keyframes fallConfetti { to { transform: translateY(100vh) rotate(720deg); } }
@@ -332,10 +333,6 @@
             .ct-container { flex-direction: row; gap: 25px; }
             .ct-left { flex: 1; }
             .ct-right { width: 400px; display: flex; flex-direction: column; justify-content: center;}
-            .ct-preview-box { height: 450px; width: 350px; }
-            .rv-style-book { width: 380px; height: 530px; }
-            .rv-style-env { transform: scale(1) !important;}
-            .rv-style-env.is-open { transform: scale(1.3) !important;}
         }
     </style>
 </head>
@@ -344,7 +341,6 @@
 
     <div id="khung-hieu-ung-nen"></div>
     <div id="yt-player-container" style="position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none;"></div>
-    
     <button id="nut-doi-giao-dien" onclick="chuyenGiaoDien()"></button>
 
     <div class="khung-dien-thoai" id="khung-chinh">
@@ -355,6 +351,7 @@
             <input type="range" id="thanh-tien-do" value="0" min="0" max="100" step="0.1" onmousedown="dangTuaNhac = true" ontouchstart="dangTuaNhac = true" onchange="thucHienTuaNhac(this.value)">
         </div>
 
+        <!-- MÀN HÌNH NHẬP PASS -->
         <div id="man-hinh-mat-khau">
             <div id="man-hinh-hpbd"><h1 class="chu-hpbd">HAPPY BIRTHDAY! 🎂</h1></div>
             <div class="mk-trai" id="vung-avatar">
@@ -372,7 +369,6 @@
                     <div class="o-mat-khau" id="hien-thi-mk"></div>
                 </div>
             </div>
-            
             <div class="mk-phai" id="vung-ban-phim">
                 <div class="ban-phim">
                     <button class="nut-so" onclick="bamSo(1)">1</button>
@@ -412,11 +408,11 @@
 
     <div id="khoi-trai-tim-cuoi"><div id="vung-chua-anh-tim"></div></div>
 
-    <!-- NÚT CHATTIME (HIỆN RA SAU KHI ĐÓNG THƯ 1.5s) -->
+    <!-- NÚT CHATTIME (CỐ ĐỊNH, HIỆN RA SAU KHI ĐÓNG THƯ 1.5S) -->
     <button id="btn-chattime" onclick="openChatTime()">✨ ChatTime</button>
 
     <!-- =================================================================
-         ✨ GIAO DIỆN CHATTIME STUDIO (WIZARD CANVA-STYLE)
+         ✨ GIAO DIỆN CHATTIME STUDIO (WIZARD CANVA-STYLE ĐÃ FIX LỖI)
     ================================================================== -->
     <div id="chattime-modal">
         <div class="ct-container">
@@ -429,7 +425,6 @@
                 <div class="ct-step active" id="ct-step-1">
                     <div class="ct-label">Viết lời nhắn bên trong thiệp...</div>
                     <textarea id="ct-msg-input" class="ct-input" placeholder="Gõ gì đó ngọt ngào nhé... 😉"></textarea>
-                    <div class="ct-char-count"><span id="ct-char">0</span>/500 ký tự</div>
                     
                     <div class="ct-label">Hẹn thời gian gửi</div>
                     <div class="ct-radio-group">
@@ -449,7 +444,7 @@
                     <div class="ct-flex-row">
                         <div>
                             <div class="ct-label">Chọn Font chữ</div>
-                            <select id="ct-font" class="ct-select" onchange="updatePreview('inside')">
+                            <select id="ct-font" class="ct-select" onchange="updateTextFromUI()">
                                 <option value="'Dancing Script', cursive">Dancing Script</option>
                                 <option value="'Pacifico', cursive">Pacifico (Ngọt ngào)</option>
                                 <option value="'Caveat', cursive">Caveat (Viết tay)</option>
@@ -458,49 +453,37 @@
                         </div>
                         <div>
                             <div class="ct-label">Màu chữ</div>
-                            <input type="color" id="ct-color" class="ct-color-picker" value="#ffccd5" oninput="updatePreview('inside')">
+                            <input type="color" id="ct-color" class="ct-color-picker" value="#ffccd5" oninput="updateTextFromUI()">
                         </div>
                     </div>
 
                     <div class="ct-flex-row">
                         <div>
-                            <div class="ct-label">Cỡ chữ</div>
-                            <select id="ct-fontsize" class="ct-select" onchange="updatePreview('inside')">
-                                <option value="26px">Vừa</option>
-                                <option value="20px">Nhỏ</option>
-                                <option value="32px">Lớn</option>
-                            </select>
-                        </div>
-                        <div>
                             <div class="ct-label">Căn lề</div>
-                            <select id="ct-align" class="ct-select" onchange="updatePreview('inside')">
+                            <select id="ct-align" class="ct-select" onchange="updateTextFromUI()">
                                 <option value="center">Giữa</option>
                                 <option value="left">Trái</option>
                                 <option value="right">Phải</option>
                             </select>
                         </div>
-                    </div>
-
-                    <div class="ct-flex-row">
                         <div>
                             <div class="ct-label">Hiệu ứng chữ</div>
-                            <select id="ct-texteffect" class="ct-select" onchange="updatePreview('inside')">
+                            <select id="ct-texteffect" class="ct-select" onchange="updateTextFromUI()">
                                 <option value="none">Không có</option>
                                 <option value="shadow">Đổ bóng</option>
                                 <option value="glow">Phát sáng</option>
                                 <option value="bold">In đậm</option>
                             </select>
                         </div>
-                        <div>
-                            <div class="ct-label">Mẫu Nền Chữ</div>
-                            <select id="ct-inside-theme" class="ct-select" onchange="updatePreview('inside')">
-                                <option value="classic">Đêm lãng mạn</option>
-                                <option value="vintage">Giấy Kraft</option>
-                                <option value="pink">Hồng Pastel</option>
-                                <option value="galaxy">Dải ngân hà</option>
-                            </select>
-                        </div>
                     </div>
+
+                    <div class="ct-label">Mẫu Nền Chữ</div>
+                    <select id="ct-inside-theme" class="ct-select" onchange="updatePreview('inside')">
+                        <option value="classic">Đêm lãng mạn</option>
+                        <option value="vintage">Giấy Kraft</option>
+                        <option value="pink">Hồng Pastel</option>
+                        <option value="galaxy">Dải ngân hà</option>
+                    </select>
 
                     <div class="ct-label">Tải Ảnh Trang Trí (Chạm vào ảnh bên ô xem trước để kéo xoay)</div>
                     <div class="ct-file-wrap" id="wrap-up-inside">
@@ -524,13 +507,13 @@
                 <div class="ct-step" id="ct-step-3">
                     <div class="ct-label">Chọn Kiểu Dáng Thiệp</div>
                     <select id="ct-cardstyle" class="ct-select" onchange="updatePreview('outside')">
+                        <option value="env">Phong Bì (Giống thư gốc)</option>
                         <option value="book">Sổ Lật 3D (Sang trọng)</option>
-                        <option value="flat">Thiệp Trượt (Hiện đại)</option>
-                        <option value="env">Phong Bì (Kiểu giống thư gốc)</option>
+                        <option value="flat">Thiệp Phẳng Lật (Hiện đại)</option>
                     </select>
 
-                    <div class="ct-label">Tiêu đề in ngoài vỏ (Chỉ dùng cho Sổ Lật)</div>
-                    <input type="text" id="ct-cover-text" class="ct-input" value="For You" oninput="updatePreview('outside')">
+                    <div class="ct-label">Tiêu đề in ngoài vỏ (Cho Sổ Lật & Thiệp Phẳng)</div>
+                    <input type="text" id="ct-cover-text" class="ct-input" value="For You" oninput="updateTextFromUI()">
                     
                     <div class="ct-label">Màu Vỏ Thiệp</div>
                     <select id="ct-outside-theme" class="ct-select" onchange="updatePreview('outside')">
@@ -540,7 +523,7 @@
                         <option value="pink">Hồng</option>
                     </select>
 
-                    <div class="ct-label">Tải Ảnh Vỏ Thiệp (Chỉ hiển thị cho Sổ Lật/Thiệp Trượt)</div>
+                    <div class="ct-label">Tải Ảnh Vỏ Thiệp</div>
                     <div class="ct-file-wrap" id="wrap-up-outside">
                         <label class="ct-file-btn" id="btn-up-outside">
                             📷 Chọn ảnh từ máy...
@@ -552,7 +535,7 @@
                         </div>
                     </div>
 
-                    <div class="ct-label" style="margin-top: 5px;">Nhạc lật thiệp</div>
+                    <div class="ct-label" style="margin-top: 5px;">Nhạc mở thiệp (Tuỳ chọn)</div>
                     <div class="ct-radio-group">
                         <label><input type="radio" name="ct-music-type" value="yt" checked onchange="toggleMusicInput()"> YouTube</label>
                         <label><input type="radio" name="ct-music-type" value="file" onchange="toggleMusicInput()"> Mp3</label>
@@ -579,40 +562,41 @@
                 <!-- BƯỚC 4: Hoàn thành -->
                 <div class="ct-step" id="ct-step-4" style="text-align: center; justify-content: center;">
                     <h2 style="color: var(--mau-chu-dao); margin-bottom: 10px;">Tạo thiệp thành công! 🎉</h2>
-                    <p style="color: #aaa; margin-bottom: 25px;">Một món quà đã sẵn sàng.</p>
+                    <p style="color: #aaa; margin-bottom: 25px;">Một món quà xuyên thời gian đã sẵn sàng.</p>
                     <div class="ct-link-box" id="fake-link">chattime.app/card/x7K9P2</div>
                     <div style="display: flex; gap: 15px; justify-content: center;">
                         <button class="ct-btn ct-btn-back" onclick="alert('Đã copy!')">📋 Copy link</button>
-                        <button class="ct-btn ct-btn-next" onclick="openReceiverView()">🎁 Xem thử ngay</button>
+                        <button class="ct-btn ct-btn-next" onclick="openReceiverView()">🎁 Trải nghiệm nhận thiệp</button>
                     </div>
                 </div>
             </div>
 
-            <!-- Cột Phải: Xem Trước (Canvas) -->
+            <!-- Cột Phải: Xem Trước (CANVA CANVAS) -->
             <div class="ct-right" id="ct-preview-area">
-                <div class="ct-label" style="text-align: center; margin-bottom:10px;" id="preview-lbl">Xem trước (Kéo thả chữ/ảnh)</div>
-                <div class="ct-preview-box" id="ct-pbox">
+                <div class="ct-label" style="text-align: center; margin-bottom:10px;" id="preview-lbl">Xem trước (Kéo thả, Phóng, Xoay)</div>
+                <div class="ct-preview-box env" id="ct-pbox">
+                    
                     <!-- Snap Lines -->
                     <div class="snap-line-x" id="snap-x"></div>
                     <div class="snap-line-y" id="snap-y"></div>
                     
+                    <!-- Background -->
                     <div id="ct-pbox-bg" style="position: absolute; inset:0; z-index: 1;"></div>
 
-                    <!-- Wrapper cho Hình Ảnh -->
-                    <div class="ct-node-wrapper" id="ct-img-wrapper" style="display:none; z-index: 10;">
+                    <!-- Lớp Mờ -->
+                    <div class="ct-overlay" id="ct-overlay"></div>
+
+                    <!-- KHUNG BAO HÌNH ẢNH UPLOAD -->
+                    <div class="ct-node-wrapper" id="ct-img-wrapper" style="display: none; z-index: 10;">
                         <img id="ct-preview-img" src="">
                         <div class="ct-handle tl" data-dir="tl"></div>
                         <div class="ct-handle tr" data-dir="tr"></div>
                         <div class="ct-handle bl" data-dir="bl"></div>
                         <div class="ct-handle br" data-dir="br"></div>
-                        <div class="ct-handle ml" data-dir="ml"></div>
-                        <div class="ct-handle mr" data-dir="mr"></div>
                         <div class="ct-rotate-handle"></div>
                     </div>
                     
-                    <div class="ct-overlay" id="ct-overlay" style="z-index: 15;"></div>
-                    
-                    <!-- Wrapper cho Text -->
+                    <!-- KHUNG BAO CHỮ -->
                     <div class="ct-node-wrapper" id="ct-txt-wrapper" style="z-index: 20;">
                         <div id="preview-text">Gõ gì đó ngọt ngào nhé... 😉</div>
                         <div class="ct-handle tl" data-dir="tl"></div>
@@ -623,7 +607,9 @@
                         <div class="ct-handle mr" data-dir="mr"></div>
                         <div class="ct-rotate-handle"></div>
                     </div>
+
                 </div>
+                <p style="text-align: center; font-size: 11px; color: #888; margin-top: 5px;">* Kéo góc để Đổi Size Chữ. Kéo hông để xuống dòng.</p>
             </div>
         </div>
     </div>
@@ -634,7 +620,6 @@
             <div class="rv-icon">💌</div>
             <div class="rv-title">Có một lời nhắn dành cho bạn</div>
             <div class="rv-subtitle" id="rv-status-text">Từ một người giấu tên...</div>
-            <button class="rv-btn-open" id="rv-btn" onclick="triggerCardOpen()">Mở thiệp ngay</button>
         </div>
         
         <button class="rv-close" id="rv-btn-close" onclick="closeReceiverView()">✖</button>
@@ -645,7 +630,7 @@
     </div>
 
     <!-- =================================================================
-         📜 JAVASCRIPT
+         📜 JAVASCRIPT GỐC + MODULE CHATTIME
     ================================================================== -->
     <script>
         // === LOGIC GỐC CỦA BỨC THƯ (BẢO TOÀN 100%) ===
@@ -742,24 +727,30 @@
             document.getElementById('khoi-trai-tim-cuoi').classList.add('hien-len');
             setInterval(() => { let imgMua = document.createElement('img'); imgMua.src = layAnhMuaNgauNhien(); imgMua.className = 'anh-mua'; imgMua.style.left = Math.random() * 90 + 'vw'; let size = Math.random() * 30 + 45; imgMua.style.width = size + 'px'; imgMua.style.height = size + 'px'; let tocDoRoi = Math.random() * 3 + (CAU_HINH.tanSuatMuaAnh / 1000) + 7; imgMua.style.animationDuration = tocDoRoi + 's'; document.getElementById('khung-hieu-ung-nen').appendChild(imgMua); setTimeout(() => { imgMua.remove(); }, tocDoRoi * 1000); }, CAU_HINH.tanSuatMuaAnh); 
             
-            // Hiện nút ChatTime
+            // NGÒI NỔ CHATTIME Ở ĐÂY
             setTimeout(() => { let btnCT = document.getElementById('btn-chattime'); if (btnCT) { btnCT.style.display = 'block'; setTimeout(() => { btnCT.style.opacity = '1'; }, 50); } }, 1500);
         }
 
         setInterval(() => { const tim = document.createElement('div'); tim.classList.add('tim-bay'); let bieuTuong = isNightMode ? ['✨', '⭐', '🌟', '💫'] : ['💖', '💕', '🌸', '✨']; tim.innerHTML = bieuTuong[Math.floor(Math.random() * 4)]; tim.style.left = Math.random() * 100 + 'vw'; let duration = Math.random() * 3 + 5; tim.style.animationDuration = duration + 's'; tim.style.fontSize = Math.random() * 15 + 15 + 'px'; document.getElementById('khung-hieu-ung-nen').appendChild(tim); setTimeout(() => { tim.remove(); }, duration * 1000); }, CAU_HINH.tanSuatMuaIcon);
 
         // =====================================================================
-        // ================= LOGIC CHATTIME STUDIO (CANVA-STYLE) ===============
+        // ================= LOGIC CHATTIME STUDIO (CANVA-STYLE PRO) ===========
         // =====================================================================
+        
         let ctState = {
             inside: { imgUrl: '', x: 50, y: 50, w: 150, h: 150, rot: 0 },
             outside: { imgUrl: '', x: 50, y: 50, w: 150, h: 150, rot: 0 },
-            text: { x: 50, y: 50, w: 250, h: 'auto', rot: 0 }, 
-            coverText: { x: 50, y: 50, w: 250, h: 'auto', rot: 0 },
+            text: { x: 50, y: 50, w: 280, fsize: 26, rot: 0 }, 
+            coverText: { x: 50, y: 50, w: 280, fsize: 35, rot: 0 },
             audioUrl: '', currentView: 'inside', selectedId: null
         };
 
-        function openChatTime() { document.getElementById('chattime-modal').style.display = "flex"; setTimeout(()=> document.getElementById('chattime-modal').style.opacity = "1", 10); updatePreview('inside'); }
+        function openChatTime() { 
+            document.getElementById('ct-cardstyle').value = 'env'; // Đặt phong bì làm mặc định
+            document.getElementById('chattime-modal').style.display = "flex"; 
+            setTimeout(()=> document.getElementById('chattime-modal').style.opacity = "1", 10); 
+            updatePreview('inside'); 
+        }
         function closeChatTime() { document.getElementById('chattime-modal').style.opacity = "0"; setTimeout(()=> document.getElementById('chattime-modal').style.display = "none", 500); }
 
         function ctNextStep(step) {
@@ -777,7 +768,7 @@
             document.getElementById('wrap-up-audio').style.display = val === 'file' ? 'flex' : 'none';
         }
 
-        // --- Hệ Thống Tải File (Có nút Xóa) ---
+        // Tải file & Xóa file ảnh/nhạc
         function handleImageUpload(input, type) {
             let file = input.files[0];
             if(file) {
@@ -785,11 +776,10 @@
                 let img = new Image();
                 img.onload = function() {
                     let aspect = this.height / this.width;
-                    if(type === 'inside') { ctState.inside.imgUrl = url; ctState.inside.h = ctState.inside.w * aspect; document.getElementById('btn-up-inside').style.display = 'none'; document.getElementById('st-up-inside').style.display = 'flex'; }
-                    if(type === 'outside'){ ctState.outside.imgUrl = url; ctState.outside.h = ctState.outside.w * aspect; document.getElementById('btn-up-outside').style.display = 'none'; document.getElementById('st-up-outside').style.display = 'flex'; }
+                    if(type === 'inside') { ctState.inside.imgUrl = url; ctState.inside.w = 150; ctState.inside.h = 150 * aspect; document.getElementById('btn-up-inside').style.display = 'none'; document.getElementById('st-up-inside').style.display = 'flex'; }
+                    if(type === 'outside'){ ctState.outside.imgUrl = url; ctState.outside.w = 150; ctState.outside.h = 150 * aspect; document.getElementById('btn-up-outside').style.display = 'none'; document.getElementById('st-up-outside').style.display = 'flex'; }
                     updatePreview(type);
-                };
-                img.src = url;
+                }; img.src = url;
             }
         }
         function removeImageUpload(type) {
@@ -800,11 +790,14 @@
         function handleAudioUpload(input) { let file = input.files[0]; if(file) { ctState.audioUrl = URL.createObjectURL(file); document.getElementById('btn-up-audio').style.display='none'; document.getElementById('st-up-audio').style.display='flex'; } }
         function removeAudioUpload() { ctState.audioUrl = ''; document.getElementById('btn-up-audio').style.display='inline-flex'; document.getElementById('st-up-audio').style.display='none'; document.querySelector('#btn-up-audio input').value = ''; }
 
-        // --- Cập nhật Preview & Background ---
-        document.getElementById('ct-msg-input').addEventListener('input', function() { document.getElementById('ct-char').innerText = this.value.length; updatePreview(ctState.currentView); });
+        // Live Gõ Chữ & Format
+        document.getElementById('ct-msg-input').addEventListener('input', function() { document.getElementById('ct-char').innerText = this.value.length; updateTextFromUI(); });
+        function updateTextFromUI() { updatePreview(); }
 
+        // Hàm Master Render Preview
         function updatePreview(viewType = ctState.currentView) {
             ctState.currentView = viewType;
+            let bgBox = document.getElementById('ct-pbox');
             let bgLayer = document.getElementById('ct-pbox-bg');
             let txtWrapper = document.getElementById('ct-txt-wrapper');
             let textEl = document.getElementById('preview-text');
@@ -813,14 +806,16 @@
             let imgEl = document.getElementById('ct-preview-img');
             let overlay = document.getElementById('ct-overlay');
 
+            // --- THAY ĐỔI HÌNH DÁNG Ô PREVIEW ---
+            let cType = document.getElementById('ct-cardstyle').value;
+            bgBox.className = 'ct-preview-box ' + cType;
+
             if(viewType === 'inside') {
                 lbl.innerText = "Xem trước LÕI THIỆP (Chạm để kéo/phóng/xoay)";
                 
-                // Nền
                 let theme = document.getElementById('ct-inside-theme').value;
                 if(theme === 'vintage') bgLayer.style.background = '#d2b48c'; else if(theme === 'pink') bgLayer.style.background = '#ffe4e1'; else if(theme === 'galaxy') bgLayer.style.background = 'radial-gradient(circle, #2b1055, #7597de)'; else bgLayer.style.background = 'linear-gradient(135deg, #2b1c27, #161219)';
 
-                // Ảnh
                 if(ctState.inside.imgUrl) {
                     imgEl.src = ctState.inside.imgUrl; imgWrapper.style.display = 'flex';
                     imgWrapper.style.left = ctState.inside.x + '%'; imgWrapper.style.top = ctState.inside.y + '%';
@@ -829,19 +824,23 @@
                     overlay.classList.add('darken');
                 } else { imgWrapper.style.display = 'none'; overlay.classList.remove('darken'); }
 
-                // Chữ
                 txtWrapper.style.left = ctState.text.x + '%'; txtWrapper.style.top = ctState.text.y + '%';
                 txtWrapper.style.width = ctState.text.w + 'px';
                 txtWrapper.style.transform = `translate(-50%, -50%) rotate(${ctState.text.rot}deg)`;
                 
                 let rawText = document.getElementById('ct-msg-input').value; textEl.innerText = rawText || "Gõ gì đó ngọt ngào nhé... 😉";
-                textEl.style.fontFamily = document.getElementById('ct-font').value; textEl.style.textAlign = document.getElementById('ct-align').value; textEl.style.fontSize = document.getElementById('ct-fontsize').value;
+                textEl.style.fontFamily = document.getElementById('ct-font').value; textEl.style.textAlign = document.getElementById('ct-align').value; 
+                
+                let fsizeSel = parseInt(document.getElementById('ct-fontsize').value);
+                if(ctState.text.fsize === 26 || ctState.text.fsize === 20 || ctState.text.fsize === 32) { ctState.text.fsize = fsizeSel; }
+                textEl.style.fontSize = ctState.text.fsize + 'px';
+
                 let color = document.getElementById('ct-color').value; textEl.style.color = color;
-                let effect = document.getElementById('ct-texteffect').value; textEl.style.fontWeight = 'normal';
+                let effect = document.getElementById('ct-texteffect').value; textEl.style.fontWeight = 'normal'; textEl.style.WebkitTextStroke = '0';
                 if (effect === 'shadow') textEl.style.textShadow = '2px 2px 4px rgba(0,0,0,0.6)'; else if (effect === 'glow') textEl.style.textShadow = `0 0 10px ${color}, 0 0 20px ${color}`; else if (effect === 'bold') { textEl.style.fontWeight = '800'; textEl.style.textShadow = 'none'; } else textEl.style.textShadow = 'none';
 
             } else { // Outside
-                lbl.innerText = "Xem trước VỎ THIỆP (Chỉ Sổ Lật & Flat)";
+                lbl.innerText = "Xem trước VỎ THIỆP (Chỉ Sổ Lật & Thiệp Phẳng)";
                 
                 let oTheme = document.getElementById('ct-outside-theme').value;
                 if(oTheme === 'black') bgLayer.style.background = 'linear-gradient(135deg, #111, #333)'; else if(oTheme === 'blue') bgLayer.style.background = 'linear-gradient(135deg, #1a2a6c, #112240)'; else if(oTheme === 'pink') bgLayer.style.background = 'linear-gradient(135deg, #ff758c, #ff7eb3)'; else bgLayer.style.background = 'linear-gradient(135deg, #ff4d6d, #590d22)';
@@ -859,11 +858,13 @@
                 txtWrapper.style.transform = `translate(-50%, -50%) rotate(${ctState.coverText.rot}deg)`;
 
                 textEl.innerText = document.getElementById('ct-cover-text').value || "For You";
-                textEl.style.fontFamily = "'Dancing Script', cursive"; textEl.style.fontSize = "35px"; textEl.style.color = "#fff"; textEl.style.textShadow = "0 2px 10px rgba(0,0,0,0.5)"; textEl.style.textAlign = "center";
+                textEl.style.fontFamily = "'Dancing Script', cursive"; 
+                textEl.style.fontSize = ctState.coverText.fsize + "px"; 
+                textEl.style.color = "#fff"; textEl.style.textShadow = "0 2px 10px rgba(0,0,0,0.5)"; textEl.style.textAlign = "center";
             }
         }
 
-        // --- CƠ CHẾ KÉO THẢ, THU PHÓNG, XOAY BẰNG CHUỘT ---
+        // --- CƠ CHẾ KÉO THẢ, THU PHÓNG, XOAY BẰNG CHUỘT (CANVA-STYLE) ---
         let pbox = document.getElementById('ct-pbox');
         let snapX = document.getElementById('snap-x'); let snapY = document.getElementById('snap-y');
         
@@ -873,19 +874,18 @@
             ctState.selectedId = null;
         }
 
-        pbox.addEventListener('mousedown', function(e) {
-            if(e.target === pbox || e.target.id === 'ct-pbox-bg' || e.target.id === 'ct-overlay') deselectAll();
-        });
+        pbox.addEventListener('mousedown', function(e) { if(e.target === pbox || e.target.id === 'ct-pbox-bg' || e.target.id === 'ct-overlay') deselectAll(); });
+        pbox.addEventListener('touchstart', function(e) { if(e.target === pbox || e.target.id === 'ct-pbox-bg' || e.target.id === 'ct-overlay') deselectAll(); });
 
         function checkSnap(pX, pY) {
             let sx = pX, sy = pY; let shX = false, shY = false;
-            if (Math.abs(pX - 50) < 3) { sx = 50; shY = true; }
-            if (Math.abs(pY - 50) < 3) { sy = 50; shX = true; }
+            if (Math.abs(pX - 50) < 3) { sx = 50; shY = true; } // Đường dọc
+            if (Math.abs(pY - 50) < 3) { sy = 50; shX = true; } // Đường ngang
             snapX.style.display = shX ? 'block' : 'none'; snapY.style.display = shY ? 'block' : 'none';
             return { x: sx, y: sy };
         }
 
-        // INIT DRAG (DI CHUYỂN)
+        // 1. DI CHUYỂN
         function initDrag(wrapperId, typeStr) {
             let el = document.getElementById(wrapperId);
             el.addEventListener('mousedown', startD); el.addEventListener('touchstart', startD, {passive: false});
@@ -924,7 +924,7 @@
         }
         initDrag('ct-txt-wrapper', 'txt'); initDrag('ct-img-wrapper', 'img');
 
-        // INIT RESIZE (PHÓNG TO/THU NHỎ)
+        // 2. PHÓNG TO/THU NHỎ (RESIZE) & ĐỔI SIZE CHỮ
         document.querySelectorAll('.ct-handle').forEach(handle => {
             handle.addEventListener('mousedown', startR); handle.addEventListener('touchstart', startR, {passive: false});
             function startR(e) {
@@ -939,19 +939,29 @@
                 if(typeStr === 'txt') sObj = ctState.currentView === 'inside' ? ctState.text : ctState.coverText;
                 else sObj = ctState.currentView === 'inside' ? ctState.inside : ctState.outside;
                 
-                let startW = sObj.w; let startH = sObj.h; let aspect = startH / startW;
+                let startW = sObj.w; let startH = sObj.h; let startFsize = sObj.fsize;
+                let aspect = startH / startW;
 
                 function onM(eM) {
                     if(!isR) return;
                     let evM = eM.touches ? eM.touches[0] : eM;
                     let dx = evM.clientX - startX;
                     let newW = startW;
-                    if(dir==='tr'||dir==='br'||dir==='mr') newW = startW + dx*2;
+                    if(dir==='tr'||dir==='br'||dir==='mr') newW = startW + dx*2; // x2 vì tâm ở giữa
                     if(dir==='tl'||dir==='bl'||dir==='ml') newW = startW - dx*2;
 
-                    if(newW > 50) {
+                    if(newW > 40) {
                         sObj.w = newW; parent.style.width = newW + 'px';
-                        if(typeStr === 'img') { sObj.h = newW * aspect; parent.style.height = sObj.h + 'px'; }
+                        if(typeStr === 'img') { 
+                            sObj.h = newW * aspect; parent.style.height = sObj.h + 'px'; 
+                        } else if(typeStr === 'txt') {
+                            // Kéo góc -> Phóng to size chữ
+                            if(dir === 'tl' || dir === 'tr' || dir === 'bl' || dir === 'br') {
+                                let ratio = newW / startW;
+                                sObj.fsize = startFsize * ratio;
+                                parent.querySelector('#preview-text').style.fontSize = sObj.fsize + 'px';
+                            }
+                        }
                     }
                 }
                 function onE() { isR = false;
@@ -963,7 +973,7 @@
             }
         });
 
-        // INIT ROTATE (XOAY SNAP 15 ĐỘ)
+        // 3. XOAY ẢNH VÀ CHỮ (KÈM SNAP TỪ TÍNH GÓC 15 ĐỘ)
         document.querySelectorAll('.ct-rotate-handle').forEach(rotH => {
             rotH.addEventListener('mousedown', startRot); rotH.addEventListener('touchstart', startRot, {passive: false});
             function startRot(e) {
@@ -981,7 +991,7 @@
                     if(!isRot) return;
                     let evM = eM.touches ? eM.touches[0] : eM;
                     let rad = Math.atan2(evM.clientY - cY, evM.clientX - cX);
-                    let deg = rad * (180 / Math.PI) - 90; // Trừ đi góc offset ban đầu của núm
+                    let deg = rad * (180 / Math.PI) - 90; 
                     
                     // Snap 15 độ
                     let snapAngle = 15;
@@ -1008,89 +1018,111 @@
 
         // ================= GIAO DIỆN NGƯỜI NHẬN FAKE =================
         let fakeTimer = null; let rvAudio = document.getElementById('rv-audio');
+        
         function openReceiverView() {
             closeChatTime();
             let rv = document.getElementById('receiver-view'); rv.style.display = "flex";
             let timeType = document.querySelector('input[name="ct-time-type"]:checked').value;
+            
+            // Xây dựng sẵn HTML cho View Nhận (KÍCH HOẠT NHẤN ĐỂ MỞ)
+            buildReceiverCardHTML();
+
             if(timeType === 'later') {
                 let timeStr = document.getElementById('ct-datetime').value;
                 if(timeStr) {
                     let target = new Date(timeStr).getTime();
-                    document.getElementById('rv-status-text').innerText = "Thông điệp đang du hành..."; document.getElementById('rv-btn').style.display = 'none';
+                    document.getElementById('rv-status-text').innerText = "Thông điệp đang du hành..."; 
+                    document.getElementById('rv-dynamic-container').style.display = 'none';
+                    
                     fakeTimer = setInterval(()=>{
                         let dist = target - new Date().getTime();
                         if(dist > 0) {
                             let d = Math.floor(dist / (1000 * 60 * 60 * 24)), h = Math.floor((dist % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)), m = Math.floor((dist % (1000 * 60 * 60)) / (1000 * 60)), s = Math.floor((dist % (1000 * 60)) / 1000);
                             document.getElementById('rv-status-text').innerText = `Còn ${d} ngày ${h} giờ ${m} phút ${s} giây`;
-                        } else { clearInterval(fakeTimer); document.getElementById('rv-status-text').innerText = "Đã đến lúc mở!"; document.getElementById('rv-btn').style.display = 'inline-block'; }
+                        } else { 
+                            clearInterval(fakeTimer); 
+                            document.getElementById('rv-wait').style.display = 'none'; 
+                            document.getElementById('rv-dynamic-container').style.display = 'flex'; 
+                        }
                     }, 1000); return;
                 }
             }
-            document.getElementById('rv-status-text').innerText = "Từ một người giấu tên..."; document.getElementById('rv-btn').style.display = 'inline-block';
+            document.getElementById('rv-wait').style.display = 'none'; 
+            document.getElementById('rv-dynamic-container').style.display = 'flex';
         }
 
         function fireConfetti() { for(let i = 0; i < 60; i++) { let conf = document.createElement('div'); conf.className = 'ct-confetti'; conf.style.left = Math.random() * 100 + 'vw'; conf.style.animationDuration = (Math.random() * 2 + 2) + 's'; conf.style.backgroundColor = ['#ff4d6d', '#00ffcc', '#ffd700', '#ffb6c1', '#ffffff'][Math.floor(Math.random() * 5)]; document.getElementById('receiver-view').appendChild(conf); setTimeout(() => conf.remove(), 4000); } }
         let ctTypingTimer = null; function typeWriterReceiver(el, text) { el.innerHTML = ''; el.classList.add('cursor-typing'); let i = 0; if(ctTypingTimer) clearInterval(ctTypingTimer); ctTypingTimer = setInterval(() => { if(i < text.length) { if(text.substr(i, 1) === '\n') { el.innerHTML += '<br>'; } else { el.innerHTML += text.charAt(i); } i++; } else { clearInterval(ctTypingTimer); el.classList.remove('cursor-typing'); } }, 35); }
 
-        function triggerCardOpen() {
-            document.getElementById('rv-wait').style.display = 'none';
-            let container = document.getElementById('rv-dynamic-container'); container.style.display = 'flex'; container.innerHTML = '';
+        function buildReceiverCardHTML() {
+            let container = document.getElementById('rv-dynamic-container'); container.innerHTML = '';
             
             let cType = document.getElementById('ct-cardstyle').value;
             let themeO = document.getElementById('ct-outside-theme').value; let bgO = (themeO==='black')?'linear-gradient(135deg, #111, #333)':(themeO==='blue')?'linear-gradient(135deg, #1a2a6c, #112240)':(themeO==='pink')?'linear-gradient(135deg, #ff758c, #ff7eb3)':'linear-gradient(135deg, #ff4d6d, #590d22)';
             let themeI = document.getElementById('ct-inside-theme').value; let bgI = (themeI==='vintage')?'#d2b48c':(themeI==='pink')?'#ffe4e1':(themeI==='galaxy')?'radial-gradient(circle, #2b1055, #7597de)':'linear-gradient(135deg, #2b1c27, #161219)';
             
-            let imgIHTML = ctState.inside.imgUrl ? `<img src="${ctState.inside.imgUrl}" style="width:${ctState.inside.w}px; height:${ctState.inside.h}px; transform:translate(-50%,-50%) rotate(${ctState.inside.rot}deg); left:${ctState.inside.x}%; top:${ctState.inside.y}%; position:absolute; pointer-events:none;">` : '';
-            let imgOHTML = ctState.outside.imgUrl ? `<img src="${ctState.outside.imgUrl}" style="width:${ctState.outside.w}px; height:${ctState.outside.h}px; transform:translate(-50%,-50%) rotate(${ctState.outside.rot}deg); left:${ctState.outside.x}%; top:${ctState.outside.y}%; position:absolute; pointer-events:none;">` : '';
+            let imgIHTML = ctState.inside.imgUrl ? `<img class="rv-object" src="${ctState.inside.imgUrl}" style="width:${ctState.inside.w}px; height:${ctState.inside.h}px; left:${ctState.inside.x}%; top:${ctState.inside.y}%; transform: translate(-50%, -50%) rotate(${ctState.inside.rot}deg);">` : '';
+            let imgOHTML = ctState.outside.imgUrl ? `<img class="rv-object" src="${ctState.outside.imgUrl}" style="width:${ctState.outside.w}px; height:${ctState.outside.h}px; left:${ctState.outside.x}%; top:${ctState.outside.y}%; transform: translate(-50%, -50%) rotate(${ctState.outside.rot}deg);">` : '';
             
-            let font = document.getElementById('ct-font').value; let align = document.getElementById('ct-align').value; let fsize = document.getElementById('ct-fontsize').value; let col = document.getElementById('ct-color').value; let eff = document.getElementById('ct-texteffect').value;
+            let font = document.getElementById('ct-font').value; let align = document.getElementById('ct-align').value; let col = document.getElementById('ct-color').value; let eff = document.getElementById('ct-texteffect').value;
             let txtShadow = (eff==='shadow')?'2px 2px 4px rgba(0,0,0,0.6)':(eff==='glow')?`0 0 10px ${col}, 0 0 20px ${col}`:'none'; let fWeight = (eff==='bold')?'800':'normal';
-            let msg = document.getElementById('ct-msg-input').value || "Chưa có lời nhắn!";
             
-            let textStyles = `font-family:${font}; text-align:${align}; font-size:${fsize}; color:${col}; text-shadow:${txtShadow}; font-weight:${fWeight}; width:${ctState.text.w}px; transform:translate(-50%,-50%) rotate(${ctState.text.rot}deg); left:${ctState.text.x}%; top:${ctState.text.y}%; position:absolute; z-index:2;`;
-            let coverTextStyles = `font-family:'Dancing Script', cursive; font-size:35px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.5); text-align:center; width:${ctState.coverText.w}px; transform:translate(-50%,-50%) rotate(${ctState.coverText.rot}deg); left:${ctState.coverText.x}%; top:${ctState.coverText.y}%; position:absolute; z-index:2;`;
+            let textStyles = `font-family:${font}; text-align:${align}; font-size:${ctState.text.fsize}px; color:${col}; text-shadow:${txtShadow}; font-weight:${fWeight}; width:${ctState.text.w}px; left:${ctState.text.x}%; top:${ctState.text.y}%; transform: translate(-50%, -50%) rotate(${ctState.text.rot}deg);`;
+            let coverTextStyles = `font-family:'Dancing Script', cursive; font-size:${ctState.coverText.fsize}px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.5); text-align:center; width:${ctState.coverText.w}px; left:${ctState.coverText.x}%; top:${ctState.coverText.y}%; transform: translate(-50%, -50%) rotate(${ctState.coverText.rot}deg);`;
+
+            let hintHTML = `<div id="rv-hint">Chạm vào thiệp để mở 👆</div>`;
 
             if(cType === 'book') {
-                container.innerHTML = `
-                    <div class="rv-style-book" id="rv-anim-card">
-                        <div class="rv-sb-cover">
-                            <div class="rv-sb-front" style="background:${bgO}">
-                                <div class="rv-layer-bg">${imgOHTML}</div><div class="rv-layer-overlay ${ctState.outside.imgUrl?'darken':''}"></div>
-                                <div style="${coverTextStyles}">${document.getElementById('ct-cover-text').value||"For You"}</div>
-                            </div>
-                            <div class="rv-sb-back"></div>
+                container.innerHTML = hintHTML + `
+                    <div class="rv-style-book" id="rv-anim-card" onclick="triggerCardOpenAnim()">
+                        <div class="rv-bc-inside" style="background:${bgI}">
+                            <div class="rv-layer-bg">${imgIHTML}</div>
+                            <div class="rv-layer-text rv-object" id="rv-text-target" style="${textStyles}"></div>
                         </div>
-                        <div class="rv-sb-inside" style="background:${bgI}">
-                            <div class="rv-layer-bg">${imgIHTML}</div><div class="rv-layer-overlay ${ctState.inside.imgUrl?'darken':''}"></div>
-                            <div id="rv-text-target" style="${textStyles}"></div>
+                        <div class="rv-bc-cover" style="background:${bgO}">
+                            <div class="rv-layer-bg">${imgOHTML}</div>
+                            <div class="rv-layer-text rv-object" style="${coverTextStyles}">${document.getElementById('ct-cover-text').value||"For You"}</div>
                         </div>
                     </div>`;
             } else if (cType === 'env') {
-                container.innerHTML = `
-                    <div class="rv-style-env" id="rv-anim-card">
-                        <div class="rv-se-back" style="background:${bgO}"></div>
-                        <div class="rv-se-paper" style="background:${bgI}">
-                            <div class="rv-layer-bg">${imgIHTML}</div><div class="rv-layer-overlay ${ctState.inside.imgUrl?'darken':''}"></div>
-                            <div id="rv-text-target" style="${textStyles}"></div>
+                container.innerHTML = hintHTML + `
+                    <div class="rv-style-env" id="rv-anim-card" onclick="triggerCardOpenAnim()">
+                        <div class="rv-ec-back" style="background:${bgO}"></div>
+                        <div class="rv-ec-paper" style="background:${bgI}">
+                            <div class="rv-layer-bg">${imgIHTML}</div>
+                            <div class="rv-layer-text rv-object" id="rv-text-target" style="${textStyles}"></div>
                         </div>
-                        <div class="rv-se-front" style="border-bottom-color:${bgO}; border-left-color:rgba(255,255,255,0.2); border-right-color:rgba(255,255,255,0.2);"></div>
-                        <div class="rv-se-flap" style="border-top-color:${bgO}"></div>
+                        <div class="rv-ec-front" style="border-bottom-color:${bgO}; border-left-color:rgba(255,255,255,0.2); border-right-color:rgba(255,255,255,0.2);"></div>
+                        <div class="rv-ec-flap" style="border-top-color:${bgO}"></div>
                     </div>`;
             } else { // flat
-                container.innerHTML = `
-                    <div class="rv-style-flat" id="rv-anim-card" style="background:${bgI}">
-                        <div class="rv-layer-bg">${imgOHTML ? imgOHTML : imgIHTML}</div><div class="rv-layer-overlay ${(ctState.outside.imgUrl || ctState.inside.imgUrl)?'darken':''}"></div>
-                        <div id="rv-text-target" style="${textStyles}"></div>
+                container.innerHTML = hintHTML + `
+                    <div class="rv-style-flat" id="rv-anim-card" onclick="triggerCardOpenAnim()">
+                        <div class="rv-fc-front" style="background:${bgO}">
+                            <div class="rv-layer-bg">${imgOHTML}</div>
+                            <div class="rv-layer-text rv-object" style="${coverTextStyles}">${document.getElementById('ct-cover-text').value||"For You"}</div>
+                        </div>
+                        <div class="rv-fc-back" style="background:${bgI}">
+                            <div class="rv-layer-bg">${imgIHTML}</div>
+                            <div class="rv-layer-text rv-object" id="rv-text-target" style="${textStyles}"></div>
+                        </div>
                     </div>`;
             }
+        }
 
+        function triggerCardOpenAnim() {
             let cardEl = document.getElementById('rv-anim-card');
+            if(cardEl.classList.contains('is-open')) return; // Không cho click lại
             
+            document.getElementById('rv-hint').style.display = 'none';
+            let cType = document.getElementById('ct-cardstyle').value;
+            let msg = document.getElementById('ct-msg-input').value || "Chưa có lời nhắn!";
+            
+            // Xử lý Phát Nhạc
             let musicType = document.querySelector('input[name="ct-music-type"]:checked').value;
             if(musicType === 'file' && ctState.audioUrl) { rvAudio.src = ctState.audioUrl; rvAudio.play().catch(e=>{}); } 
             else if (musicType === 'yt') { let yId = extractVideoID(document.getElementById('ct-music-yt').value); if(yId) document.getElementById('rv-yt-container').innerHTML = `<iframe width="1" height="1" src="https://www.youtube.com/embed/${yId}?autoplay=1&controls=0" frameborder="0" allow="autoplay"></iframe>`; }
 
-            void cardEl.offsetWidth; 
             cardEl.classList.add('is-open');
 
             setTimeout(() => {
@@ -1098,7 +1130,7 @@
                 document.getElementById('rv-btn-close').style.display = 'block';
                 typeWriterReceiver(document.getElementById('rv-text-target'), msg);
                 fireConfetti();
-            }, cType === 'flat' ? 500 : 1000);
+            }, 800);
         }
 
         function closeReceiverView() {
