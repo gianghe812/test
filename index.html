@@ -7,6 +7,9 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Quicksand:wght@500;600;700&family=Caveat:wght@600;700&family=Pacifico&display=swap" rel="stylesheet">
 
+    <!-- =================================================================
+         ⚙️ BẢNG ĐIỀU KHIỂN TỔNG HỢP
+    ================================================================== -->
     <script>
         const CAU_HINH = {
             matKhau: "13092012", 
@@ -56,7 +59,9 @@
     </style>
 
     <style>
-        /* === RESET & CỐT LÕI BỨC THƯ GỐC (BẢO TOÀN 100%) === */
+        /* ========================================================= */
+        /* ================== CSS CODE BỨC THƯ GỐC ================= */
+        /* ========================================================= */
         *, *::before, *::after { box-sizing: border-box; user-select: none; -webkit-user-select: none; -webkit-user-drag: none; }
         html, body { width: 100%; height: 100%; margin: 0; padding: 0; overflow: hidden; position: fixed; overscroll-behavior: none; transition: background-color 1.5s ease; }
         body { background-color: var(--bg-body); font-family: 'Quicksand', sans-serif; display: flex; justify-content: center; align-items: center; }
@@ -66,7 +71,7 @@
         .tim-bay { position: absolute; bottom: -50px; font-size: 20px; animation: bayLen linear forwards; z-index: 1; opacity: 0; pointer-events: none; }
         @keyframes bayLen { 0% { transform: translateY(0) scale(0.8) rotate(0deg); opacity: 0; } 15% { opacity: 0.6; } 85% { opacity: 0.6; } 100% { transform: translateY(-110vh) scale(1.5) rotate(360deg); opacity: 0; } }
 
-        #nut-doi-giao-dien { position: absolute; top: 20px; right: 20px; width: 45px; height: 45px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); color: #fff; font-size: 20px; cursor: pointer; z-index: 999; backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); outline: none; padding: 0; margin: 0; line-height: 1;}
+        #nut-doi-giao-dien { position: absolute; top: 20px; right: 20px; width: 45px; height: 45px; border-radius: 50%; background: rgba(255, 255, 255, 0.2); border: 2px solid rgba(255, 255, 255, 0.5); color: #fff; font-size: 20px; cursor: pointer; z-index: 999; backdrop-filter: blur(8px); display: flex; justify-content: center; align-items: center; box-shadow: 0 4px 15px rgba(0,0,0,0.05); }
         body.theme-night #nut-doi-giao-dien { background: rgba(255, 182, 193, 0.1); border-color: rgba(255, 154, 171, 0.3); box-shadow: 0 4px 15px rgba(255, 117, 143, 0.15); }
         #nut-doi-giao-dien:hover { transform: scale(1.1); background: rgba(255, 255, 255, 0.4); }
 
@@ -79,25 +84,25 @@
         #anh-bia-nhac { width: 36px; height: 36px; border-radius: 50%; object-fit: cover; animation: xoayTron 6s linear infinite; animation-play-state: paused; border: 2px solid var(--mau-chu-dao); flex-shrink: 0; box-shadow: 0 2px 8px var(--shadow-tim); }
         #anh-bia-nhac.dang-phat { animation-play-state: running; }
         @keyframes xoayTron { 100% { transform: rotate(360deg); } }
-        #nut-play { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--mau-chu-dao); padding: 0; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center; }
+        #nut-play { background: none; border: none; font-size: 18px; cursor: pointer; color: var(--mau-chu-dao); padding: 0; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center; outline: none; line-height: 1; flex-shrink: 0; transition: transform 0.2s; }
         #nut-play:active { transform: scale(0.8); }
-        #thanh-tien-do { width: 130px; height: 5px; accent-color: var(--mau-chu-dao); cursor: pointer; }
+        #thanh-tien-do { width: 130px; height: 5px; accent-color: var(--mau-chu-dao); cursor: pointer; outline: none; margin: 0; flex-shrink: 0; opacity: 0.8; transition: opacity 0.3s; }
 
-        #man-hinh-mat-khau { position: absolute; inset: 0; background: var(--bg-pass); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 30; color: var(--text-pass); padding: 20px; transition: opacity 0.5s; }
+        #man-hinh-mat-khau { position: absolute; inset: 0; background: var(--bg-pass); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 30; color: var(--text-pass); padding: 20px; transition: background-color 1.5s ease, opacity 0.5s; }
         .dung-pass { animation: moKhoa 0.8s ease forwards; }
-        @keyframes moKhoa { 100% { transform: scale(1.3); opacity: 0; visibility: hidden; } }
+        @keyframes moKhoa { 0% { transform: scale(1); opacity: 1; filter: brightness(1); } 40% { filter: brightness(1.2); transform: scale(0.98); } 100% { transform: scale(1.3); opacity: 0; filter: brightness(1.5); visibility: hidden; } }
 
-        #man-hinh-hpbd { position: absolute; inset: 0; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 35; opacity: 0; transition: opacity 1.5s ease; }
+        #man-hinh-hpbd { position: absolute; inset: 0; background: transparent; display: none; flex-direction: column; justify-content: center; align-items: center; z-index: 35; opacity: 0; transition: opacity 1.5s ease; }
         .chu-hpbd { font-size: 38px; font-weight: 800; letter-spacing: 2px; text-transform: uppercase; text-align: center; animation: glowDay 2s ease-in-out infinite alternate; text-shadow: 0 4px 15px rgba(0,0,0,0.1); }
         body.theme-night .chu-hpbd { animation: glowNight 2s ease-in-out infinite alternate; }
         @keyframes glowDay { from { text-shadow: 0 0 15px #fff, 0 0 25px var(--mau-chu-dao); color: #fff; transform: scale(1);} to { text-shadow: 0 0 25px #fff, 0 0 40px var(--mau-nut-cat); color: var(--bg-phone); transform: scale(1.05);} }
         @keyframes glowNight { from { text-shadow: 0 0 15px #fff, 0 0 25px var(--mau-chu-dao); color: #fff; transform: scale(1);} to { text-shadow: 0 0 25px #fff, 0 0 40px #be123c; color: var(--bg-phone); transform: scale(1.05);} }
 
-        .avatar-mk { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border-nut-so); box-shadow: 0 8px 25px rgba(0,0,0,0.15); transition: transform 0.4s; cursor: pointer; }
+        .avatar-mk { width: 140px; height: 140px; border-radius: 50%; object-fit: cover; border: 4px solid var(--border-nut-so); box-shadow: 0 8px 25px rgba(0,0,0,0.15); cursor: pointer; transition: transform 0.4s; }
         .avatar-mk:hover { transform: scale(1.08); box-shadow: 0 12px 30px var(--shadow-tim); }
 
-        .mk-trai { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 300px; margin: 0 auto; }
-        #tieu-de-mk { font-size: 21px; margin-top: 18px; font-weight: 700; min-height: 27px; text-align: center; width: 100%; display: flex; justify-content: center; align-items: center; letter-spacing: 0.5px; }
+        .mk-trai { display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 300px; transition: opacity 1s ease; margin: 0 auto; }
+        #tieu-de-mk { font-size: 21px; margin-top: 18px; font-weight: 700; min-height: 27px; text-align: center; width: 100%; display: flex; justify-content: center; align-items: center; transition: color 1s ease; letter-spacing: 0.5px; }
         
         #khoi-dem-nguoc { display: none; flex-direction: column; align-items: center; margin-top: 15px; width: 100%; animation: fadeVao 0.8s ease; }
         .dong-ho { display: flex; gap: 12px; }
@@ -106,9 +111,9 @@
         .o-thoi-gian small { font-size: 12px; font-weight: 600; opacity: 0.8; margin-top: 2px; text-transform: uppercase; }
         @keyframes fadeVao { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* FIX LỖI PASS KÊNH LÊN */
+        /* FIX ĐỨNG IM PASSWORD KHÔNG KÊNH */
         #khoi-nhap-pass { display: none; flex-direction: column; align-items: center; width: 100%; opacity: 0; transition: opacity 1s ease; }
-        .o-mat-khau { font-size: 32px; min-height: 45px; height: 45px; margin-top: 5px; margin-bottom: 15px; color: var(--text-pass); text-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 0 10px; }
+        .o-mat-khau { font-size: 32px; min-height: 45px; height: 45px; margin-top: 5px; margin-bottom: 15px; color: var(--text-pass); text-shadow: 0 2px 5px rgba(0,0,0,0.2); display: flex; justify-content: center; align-items: center; gap: 10px; width: 100%; padding: 0 10px; transition: color 1s ease; }
         .o-mat-khau span { display: inline-block; line-height: 45px; }
         .sai-pass { animation: rung-lac 0.4s ease; color: var(--text-sai-pass) !important; text-shadow: 0 2px 10px rgba(255,0,0,0.3) !important; }
         @keyframes rung-lac { 0%, 100% { transform: translateX(0); } 20%, 60% { transform: translateX(-15px); } 40%, 80% { transform: translateX(15px); } }
@@ -124,7 +129,7 @@
         .xoa-so:active { background: var(--mau-nut-cat); color: white; transform: scale(0.92) translateY(3px); box-shadow: inset 0 5px 15px rgba(0,0,0,0.3); }
 
         #man-hinh-phong-bi { position: absolute; inset: 0; background: var(--bg-pass); display: flex; flex-direction: column; justify-content: center; align-items: center; z-index: 20; transition: opacity 0.8s ease, background-color 1.5s ease; }
-        .chu-huong-dan { color: var(--text-pass); font-size: 20px; font-weight: 700; margin-top: 50px; text-shadow: 0 2px 8px rgba(0,0,0,0.15); animation: nhapnhay 2s infinite; letter-spacing: 0.5px; }
+        .chu-huong-dan { color: var(--text-pass); font-size: 20px; font-weight: 700; margin-top: 50px; text-shadow: 0 2px 8px rgba(0,0,0,0.15); animation: nhapnhay 2s infinite; transition: color 1s ease; letter-spacing: 0.5px; }
         @keyframes nhapnhay { 0%, 100% { opacity: 0.8; transform: translateY(0); } 50% { opacity: 0.3; transform: translateY(-3px); } }
 
         .thu-container { position: relative; width: 320px; height: 210px; cursor: pointer; perspective: 1000px; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.12)); transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); }
@@ -185,7 +190,7 @@
         }
 
         /* =====================================================================
-           🌟 CSS CHATTIME STUDIO & RECEIVER VIEW (CANVA-STYLE PRO)
+           🌟 CSS TÍNH NĂNG CHATTIME STUDIO (CANVA PRO CLONE)
         ======================================================================== */
         
         #btn-chattime {
@@ -193,7 +198,7 @@
             background: rgba(255, 255, 255, 0.15); border: 1px solid rgba(255,255,255,0.4);
             backdrop-filter: blur(10px); color: var(--mau-chu-dao); font-family: 'Quicksand', sans-serif;
             padding: 10px 20px; border-radius: 30px; font-weight: 700; cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none; opacity: 0; transition: opacity 0.8s ease, transform 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: none; opacity: 0; transition: opacity 0.8s ease;
             animation: pulseBtnCT 2s infinite;
         }
         body.theme-night #btn-chattime { background: rgba(0, 0, 0, 0.4); color: #fff; border-color: rgba(255,255,255,0.2);}
@@ -212,38 +217,36 @@
         .ct-step.active { display: flex; animation: fadeStepCT 0.4s forwards; }
         @keyframes fadeStepCT { from{opacity:0; transform:translateY(10px)} to{opacity:1; transform:translateY(0)} }
         
-        textarea.ct-input { width: 100%; height: 100px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; font-family: inherit; font-size: 16px; padding: 15px; resize: none; margin-bottom: 5px; outline: none; }
+        textarea.ct-input { width: 100%; height: 120px; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 12px; color: #fff; font-family: inherit; font-size: 16px; padding: 15px; resize: none; margin-bottom: 5px; outline: none; }
         .ct-label { font-size: 14px; font-weight: 600; margin-bottom: 6px; color: #ddd; }
         .ct-radio-group { display: flex; gap: 15px; margin-bottom: 15px; }
-        input[type="datetime-local"].ct-input, select.ct-select, input[type="text"].ct-input { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: #fff; padding: 10px; outline: none; margin-bottom: 12px; font-family: 'Quicksand', sans-serif; }
+        input[type="text"].ct-input, select.ct-select { width: 100%; background: rgba(0,0,0,0.3); border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; color: #fff; padding: 10px; outline: none; margin-bottom: 12px; font-family: 'Quicksand'; }
         .ct-flex-row { display: flex; gap: 15px; margin-bottom: 8px; } .ct-flex-row > div { flex: 1; }
         .ct-color-picker { width: 100%; height: 40px; border: 1px solid rgba(255,255,255,0.2); border-radius: 10px; background: rgba(0,0,0,0.3); cursor: pointer; padding: 2px;}
 
-        /* Upload Nút & Trạng thái */
+        /* Upload Nút & Trạng thái ĐÃ FIX: Không bị đè nút */
         .ct-file-wrap { margin-bottom: 12px; display: flex; flex-direction: column;}
         .ct-file-btn { display: inline-flex; align-items: center; justify-content: center; background: rgba(255,255,255,0.1); border: 1px dashed rgba(255,255,255,0.3); padding: 10px 15px; border-radius: 10px; cursor: pointer; font-size: 14px; width: 100%; transition: 0.3s;}
         .ct-file-btn:hover { background: rgba(255,255,255,0.2); border-color: #fff; }
         input[type="file"] { display: none; }
-        .ct-file-status { display: none; background: rgba(0,255,204,0.1); border: 1px solid rgba(0,255,204,0.3); padding: 10px 15px; border-radius: 10px; justify-content: space-between; align-items: center; font-size: 14px; color: #00ffcc; width: 100%;}
+        .ct-file-status { display: none; background: rgba(0,255,204,0.1); border: 1px solid rgba(0,255,204,0.3); padding: 10px 15px; border-radius: 10px; justify-content: space-between; align-items: center; font-size: 14px; color: #00ffcc; width: 100%; }
         .ct-file-status button { background: none; border: none; color: #ff4d6d; font-weight: bold; cursor: pointer; font-size: 18px; line-height: 1; padding: 0 5px;}
 
         .ct-footer { display: flex; justify-content: space-between; margin-top: 10px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 15px; }
         .ct-btn { padding: 10px 20px; border-radius: 20px; font-weight: 700; cursor: pointer; border: none; font-family: 'Quicksand'; transition: 0.3s;}
         .ct-btn-back { background: transparent; color: #aaa; border: 1px solid rgba(255,255,255,0.2); }
         .ct-btn-next { background: var(--mau-chu-dao); color: #fff; }
-        .ct-btn-next:hover { transform: scale(1.05); }
 
-        /* KHU VỰC BẢNG VẼ CANVA (PREVIEW) */
+        /* BẢNG VẼ CANVA (PREVIEW) ĐÃ FIX TỰ CHỈNH HÌNH DÁNG & NỀN */
         .ct-preview-area { position: relative; width: 100%; display: flex; flex-direction: column; align-items: center; z-index: 1;}
         .ct-preview-box { background: #2b1c27; position: relative; overflow: hidden; border: 1px solid rgba(255,255,255,0.2); margin: 0 auto 15px auto; touch-action: none; transition: 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 10px 30px rgba(0,0,0,0.5);}
-        
-        /* Thay đổi hình dáng hộp xem trước */
-        .ct-preview-box.flat { width: 320px; height: 450px; border-radius: 20px; }
-        .ct-preview-box.book { width: 320px; height: 450px; border-radius: 5px 15px 15px 5px; border-left: 18px solid rgba(0,0,0,0.6); }
-        .ct-preview-box.env { width: 320px; height: 210px; border-radius: 8px; border-bottom: 2px solid rgba(0,0,0,0.4); }
+        .ct-preview-box.flat { width: 320px; height: 420px; border-radius: 20px; }
+        .ct-preview-box.book { width: 320px; height: 420px; border-radius: 5px 15px 15px 5px; border-left: 18px solid rgba(0,0,0,0.6); }
+        .ct-preview-box.env { width: 320px; height: 210px; border-radius: 0 0 12px 12px; }
 
         #ct-pbox-bg { position: absolute; inset:0; z-index: 1;}
-        
+
+        /* Snap lines (Đường gióng hồng) */
         .snap-line-x { position: absolute; top: 50%; left: 0; width: 100%; height: 1px; background: #ff4d6d; z-index: 50; display: none; pointer-events: none;}
         .snap-line-y { position: absolute; left: 50%; top: 0; width: 1px; height: 100%; background: #ff4d6d; z-index: 50; display: none; pointer-events: none;}
 
@@ -257,20 +260,20 @@
         .ct-handle { position: absolute; background: #fff; border: 1.5px solid #8c52ff; display: none; z-index: 30;}
         .ct-node-wrapper.selected .ct-handle { display: block; }
         
-        /* 4 Góc: Chấm tròn (Dùng để Scale đều) */
+        /* 4 Góc: Chấm tròn (Dùng để Scale đều Ảnh hoặc Đổi Size Chữ) */
         .ct-handle.corner { width: 12px; height: 12px; border-radius: 50%; }
         .ct-handle.tl { top: -6px; left: -6px; cursor: nwse-resize; }
         .ct-handle.tr { top: -6px; right: -6px; cursor: nesw-resize; }
         .ct-handle.bl { bottom: -6px; left: -6px; cursor: nesw-resize; }
         .ct-handle.br { bottom: -6px; right: -6px; cursor: nwse-resize; }
         
-        /* 4 Cạnh: Thanh gạch (Chữ thì kéo 2 bên để xuống dòng) */
+        /* 2 Cạnh Hông (Chữ thì kéo 2 bên để ép xuống dòng) */
         .ct-handle.side-v { width: 6px; height: 20px; border-radius: 3px; top: 50%; transform: translateY(-50%); cursor: ew-resize;}
         .ct-handle.ml { left: -3px; }
         .ct-handle.mr { right: -3px; }
-        .ct-handle.side-h { height: 6px; width: 20px; border-radius: 3px; left: 50%; transform: translateX(-50%); cursor: ns-resize;}
-        .ct-handle.tc { top: -3px; }
-        .ct-handle.bc { bottom: -3px; }
+        
+        /* Ẩn cục kéo ngang cho Image để tránh bóp méo ảnh */
+        #ct-img-wrapper .ct-handle.ml, #ct-img-wrapper .ct-handle.mr { display: none; }
 
         /* Nút xoay (Rotate) dưới đáy */
         .ct-rotate-handle { position: absolute; bottom: -35px; left: 50%; transform: translateX(-50%); width: 24px; height: 24px; background: #fff url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="14" height="14"><path d="M12 2v3a7 7 0 1 0 7 7h3a10 10 0 1 1-10-10z" fill="%23000"/></svg>') center center no-repeat; border-radius: 50%; border: 1px solid #ccc; cursor: grab; display: none; z-index: 30; box-shadow: 0 2px 5px rgba(0,0,0,0.2);}
@@ -278,14 +281,14 @@
         .ct-rotate-handle:active { cursor: grabbing;}
 
         /* Nội dung bên trong Node */
-        #ct-preview-img { width: 100%; height: 100%; pointer-events: none; object-fit: contain;}
+        #ct-preview-img { display: none; width: 100%; height: 100%; pointer-events: none; object-fit: contain;}
         #preview-text { color: #ffccd5; white-space: pre-wrap; word-break: break-word; pointer-events: none; padding: 5px; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; line-height: 1.4;}
 
         .ct-overlay { position: absolute; inset: 0; background: rgba(0,0,0,0); z-index: 5; pointer-events: none;}
         .ct-overlay.darken { background: rgba(0,0,0,0.4); }
         .ct-link-box { background: rgba(0,0,0,0.4); padding: 15px; border-radius: 10px; text-align: center; font-family: monospace; color: var(--mau-chu-dao); word-break: break-all; margin: 15px 0;}
 
-        /* GIAO DIỆN NGƯỜI NHẬN FAKE & 3 PHONG CÁCH THIỆP */
+        /* GIAO DIỆN NGƯỜI NHẬN - CLICK ĐỂ MỞ & 3 KIỂU THIỆP HOÀN HẢO */
         #receiver-view { position: fixed; inset: 0; z-index: 100001; display: none; background: #0f0c13; color: #fff; font-family: 'Quicksand'; justify-content: center; align-items: center; flex-direction: column; overflow: hidden;}
         .rv-wait-screen { text-align: center; z-index: 10; display: flex; flex-direction: column; align-items: center; transition: opacity 0.5s; cursor: pointer; padding: 30px; border-radius: 20px; }
         .rv-wait-screen:hover { background: rgba(255,255,255,0.05); }
@@ -299,7 +302,7 @@
 
         #rv-dynamic-container { display: none; position: relative; width: 100%; height: 100%; justify-content: center; align-items: center; perspective: 1500px;}
 
-        /* STYLE 1: FLAT (Thiệp Phẳng trượt) */
+        /* STYLE 1: FLAT (Thiệp Phẳng trượt lật) */
         .rv-style-flat { width: 320px; height: 450px; border-radius: 20px; position: relative; cursor: pointer; transform-style: preserve-3d; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); transform: translateY(100vh); opacity: 0;}
         .rv-style-flat.is-ready { transform: translateY(0); opacity: 1; }
         .rv-fc-front, .rv-fc-back { position: absolute; inset:0; backface-visibility: hidden; border-radius: 20px; overflow: hidden; box-shadow: 0 20px 50px rgba(0,0,0,0.6);}
@@ -314,23 +317,23 @@
         .rv-style-book.is-open { transform: translateX(40px) scale(1.05); cursor: default;}
         .rv-style-book.is-open .rv-bc-cover { transform: rotateY(-140deg); box-shadow: 20px 0 30px rgba(0,0,0,0.3); }
 
-        /* STYLE 3: ENVELOPE (Phong bì - Copy nguyên bản HTML CSS gốc) */
-        .rv-style-env { width: 320px; height: 210px; position: relative; perspective: 1000px; cursor: pointer; transition: 1s; transform: scale(0.5); opacity: 0; margin-top: 100px;}
-        .rv-style-env.is-ready { transform: scale(1.1); opacity: 1;}
-        .rv-ec-back { position: absolute; inset: 0; border-radius: 0 0 12px 12px; z-index: 1;}
-        .rv-ec-paper { position: absolute; left: 12px; right: 12px; top: 12px; bottom: 12px; z-index: 2; overflow: hidden; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); border-radius: 0;}
-        .rv-ec-front { position: absolute; bottom: 0; left: 0; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 115px solid transparent; border-top: 95px solid transparent; border-radius: 0 0 12px 12px; z-index: 3; pointer-events: none;}
-        .rv-ec-flap { position: absolute; top: 0; left: 0; border-top: 120px solid transparent; border-left: 160px solid transparent; border-right: 160px solid transparent; border-bottom: 90px solid transparent; transform-origin: top; transition: transform 0.8s; z-index: 4; pointer-events: none;}
+        /* STYLE 3: ENVELOPE (Phong bì rút nguyên bản) */
+        .rv-style-env { width: 340px; height: 230px; position: relative; perspective: 1000px; cursor: pointer; transition: 1s; margin-top: 100px; transform: scale(0.5); opacity: 0;}
+        .rv-style-env.is-ready { transform: scale(1); opacity: 1;}
+        .rv-ec-back { position: absolute; inset: 0; border-radius: 0 0 10px 10px; z-index: 1;}
+        .rv-ec-paper { position: absolute; left: 10px; right: 10px; top: 10px; bottom: 10px; z-index: 2; overflow: hidden; transition: transform 1.2s cubic-bezier(0.25, 0.8, 0.25, 1); border-radius: 8px; box-shadow: 0 0 15px rgba(0,0,0,0.2);}
+        .rv-ec-front { position: absolute; bottom: 0; left: 0; border-left: 170px solid rgba(255,255,255,0.2); border-right: 170px solid rgba(255,255,255,0.2); border-bottom: 130px solid rgba(0,0,0,0.1); border-top: 100px solid transparent; z-index: 3;}
+        .rv-ec-flap { position: absolute; top: 0; left: 0; border-top: 130px solid rgba(0,0,0,0.2); border-left: 170px solid transparent; border-right: 170px solid transparent; border-bottom: 100px solid transparent; transform-origin: top; transition: transform 0.8s; z-index: 4;}
         .rv-style-env.is-open { cursor: default; }
         .rv-style-env.is-open .rv-ec-flap { transform: rotateX(180deg); z-index: 1; }
-        .rv-style-env.is-open .rv-ec-paper { transform: translateY(-160px) scale(1.1); z-index: 5; height: 350px; box-shadow: 0 -5px 15px rgba(0,0,0,0.2); }
+        .rv-style-env.is-open .rv-ec-paper { transform: translateY(-190px) scale(1.15); z-index: 5; height: 350px; }
 
         /* Lớp dùng chung cho thiệp ở Receiver */
         .rv-layer-bg { position: absolute; inset:0; overflow: hidden;}
-        .rv-layer-bg img { position: absolute; transform-origin: center;}
+        .rv-layer-bg img { position: absolute; transform: translate(-50%, -50%); transform-origin: center;}
         .rv-layer-overlay { position: absolute; inset:0; z-index: 1; pointer-events: none;}
         .rv-layer-overlay.darken { background: rgba(0,0,0,0.4); }
-        .rv-layer-text { position: absolute; z-index: 2; white-space: pre-wrap; word-break: break-word; transform-origin: center;}
+        .rv-layer-text { position: absolute; z-index: 2; white-space: pre-wrap; word-break: break-word; transform-origin: center; display: flex; flex-direction: column; justify-content: center;}
 
         .ct-confetti { position: absolute; top: -10px; width: 10px; height: 10px; z-index: 100005; animation: fallConfetti linear forwards; }
         @keyframes fallConfetti { to { transform: translateY(100vh) rotate(720deg); } }
@@ -339,10 +342,13 @@
             .ct-container { flex-direction: row; gap: 25px; }
             .ct-left { flex: 1; }
             .ct-right { width: 400px; display: flex; flex-direction: column; justify-content: center;}
+            .ct-preview-box.flat { width: 350px; height: 500px; }
+            .ct-preview-box.book { width: 350px; height: 500px; }
+            .ct-preview-box.env { width: 350px; height: 240px; }
             .rv-style-flat { width: 400px; height: 560px; }
             .rv-style-book { width: 380px; height: 530px; }
-            .rv-style-env { transform: scale(1) !important;}
-            .rv-style-env.is-ready { transform: scale(1.3) !important;}
+            .rv-style-env.is-ready { transform: scale(1.2) !important;}
+            .rv-style-env.is-open { transform: scale(1.2) !important;}
         }
     </style>
 </head>
@@ -422,7 +428,7 @@
     <button id="btn-chattime" onclick="openChatTime()">✨ ChatTime</button>
 
     <!-- =================================================================
-         ✨ GIAO DIỆN CHATTIME STUDIO (WIZARD CANVA-STYLE ĐÃ FIX LỖI)
+         ✨ GIAO DIỆN CHATTIME STUDIO (WIZARD CANVA-STYLE)
     ================================================================== -->
     <div id="chattime-modal">
         <div class="ct-container">
@@ -519,10 +525,10 @@
                     <select id="ct-cardstyle" class="ct-select" onchange="updatePreview('outside')">
                         <option value="env">Phong Bì (Giống thư gốc)</option>
                         <option value="book">Sổ Lật 3D (Sang trọng)</option>
-                        <option value="flat">Thiệp Trượt (Hiện đại)</option>
+                        <option value="flat">Thiệp Phẳng Lật (Hiện đại)</option>
                     </select>
 
-                    <div class="ct-label">Tiêu đề in ngoài vỏ (Chỉ dùng cho Sổ Lật & Thiệp Trượt)</div>
+                    <div class="ct-label">Tiêu đề in ngoài vỏ (Chỉ dùng cho Sổ Lật & Thiệp Phẳng)</div>
                     <input type="text" id="ct-cover-text" class="ct-input" value="For You" oninput="updateTextFromUI()">
                     
                     <div class="ct-label">Màu Vỏ Thiệp</div>
@@ -533,7 +539,7 @@
                         <option value="pink">Hồng</option>
                     </select>
 
-                    <div class="ct-label">Tải Ảnh Vỏ Thiệp</div>
+                    <div class="ct-label">Tải Ảnh Vỏ Thiệp (Chỉ hiển thị cho Sổ Lật/Thiệp Flat)</div>
                     <div class="ct-file-wrap" id="wrap-up-outside">
                         <label class="ct-file-btn" id="btn-up-outside">
                             📷 Chọn ảnh từ máy...
@@ -583,7 +589,7 @@
 
             <!-- Cột Phải: Xem Trước (CANVA CANVAS) -->
             <div class="ct-right" id="ct-preview-area">
-                <div class="ct-label" style="text-align: center; margin-bottom:10px;" id="preview-lbl">Xem trước (Kéo thả, Phóng, Xoay)</div>
+                <div class="ct-label" style="text-align: center; margin-bottom:10px;" id="preview-lbl">Xem trước (Kéo thả chữ/ảnh)</div>
                 <div class="ct-preview-box env" id="ct-pbox">
                     
                     <!-- Snap Lines -->
@@ -596,7 +602,7 @@
                     <!-- Lớp Mờ -->
                     <div class="ct-overlay" id="ct-overlay"></div>
 
-                    <!-- KHUNG BAO HÌNH ẢNH UPLOAD (CÓ 4 CHẤM) -->
+                    <!-- KHUNG BAO HÌNH ẢNH UPLOAD (CÓ 4 CHẤM GÓC) -->
                     <div class="ct-node-wrapper" id="ct-img-wrapper" style="display: none; z-index: 10;">
                         <img id="ct-preview-img" src="" style="width: 100%; height: 100%; pointer-events: none;">
                         <div class="ct-handle corner tl" data-dir="tl"></div>
@@ -621,7 +627,7 @@
                     </div>
 
                 </div>
-                <p style="text-align: center; font-size: 11px; color: #888; margin-top: 5px;">* Kéo góc tròn để đổi Size. Kéo hông để ép xuống dòng.</p>
+                <p style="text-align: center; font-size: 11px; color: #888; margin-top: 5px;">* Kéo góc tròn để đổi Size. Kéo cạnh vuông để xuống dòng.</p>
             </div>
         </div>
     </div>
@@ -747,7 +753,7 @@
         setInterval(() => { const tim = document.createElement('div'); tim.classList.add('tim-bay'); let bieuTuong = isNightMode ? ['✨', '⭐', '🌟', '💫'] : ['💖', '💕', '🌸', '✨']; tim.innerHTML = bieuTuong[Math.floor(Math.random() * 4)]; tim.style.left = Math.random() * 100 + 'vw'; let duration = Math.random() * 3 + 5; tim.style.animationDuration = duration + 's'; tim.style.fontSize = Math.random() * 15 + 15 + 'px'; document.getElementById('khung-hieu-ung-nen').appendChild(tim); setTimeout(() => { tim.remove(); }, duration * 1000); }, CAU_HINH.tanSuatMuaIcon);
 
         // =====================================================================
-        // ================= LOGIC CHATTIME STUDIO (CANVA-STYLE PRO) ===========
+        // ================= LOGIC CHATTIME STUDIO (CANVA PRO) =================
         // =====================================================================
         
         let ctState = {
@@ -808,7 +814,7 @@
         function handleAudioUpload(input) { let file = input.files[0]; if(file) { ctState.audioUrl = URL.createObjectURL(file); document.getElementById('btn-up-audio').style.display='none'; document.getElementById('st-up-audio').style.display='flex'; } }
         function removeAudioUpload() { ctState.audioUrl = ''; document.getElementById('btn-up-audio').style.display='inline-flex'; document.getElementById('st-up-audio').style.display='none'; document.querySelector('#btn-up-audio input').value = ''; }
 
-        // Live Gõ Chữ & Format
+        // Live Gõ Chữ
         document.getElementById('ct-msg-input').addEventListener('input', function() { document.getElementById('ct-char').innerText = this.value.length; updateTextFromUI(); });
         function updateTextFromUI() { updatePreview(); }
 
@@ -897,8 +903,8 @@
 
         function checkSnap(pX, pY) {
             let sx = pX, sy = pY; let shX = false, shY = false;
-            if (Math.abs(pX - 50) < 3) { sx = 50; shY = true; } // Đường dọc
-            if (Math.abs(pY - 50) < 3) { sy = 50; shX = true; } // Đường ngang
+            if (Math.abs(pX - 50) < 3) { sx = 50; shY = true; } 
+            if (Math.abs(pY - 50) < 3) { sy = 50; shX = true; } 
             snapX.style.display = shX ? 'block' : 'none'; snapY.style.display = shY ? 'block' : 'none';
             return { x: sx, y: sy };
         }
@@ -942,7 +948,7 @@
         }
         initDrag('ct-txt-wrapper', 'txt'); initDrag('ct-img-wrapper', 'img');
 
-        // 2. PHÓNG TO/THU NHỎ (RESIZE) & ĐỔI SIZE CHỮ
+        // 2. PHÓNG TO/THU NHỎ VÀ ĐỔI SIZE CHỮ
         document.querySelectorAll('.ct-handle').forEach(handle => {
             handle.addEventListener('mousedown', startR); handle.addEventListener('touchstart', startR, {passive: false});
             function startR(e) {
@@ -965,7 +971,7 @@
                     let evM = eM.touches ? eM.touches[0] : eM;
                     let dx = evM.clientX - startX;
                     let newW = startW;
-                    if(dir==='tr'||dir==='br'||dir==='mr') newW = startW + dx*2; // x2 vì tâm ở giữa
+                    if(dir==='tr'||dir==='br'||dir==='mr') newW = startW + dx*2; 
                     if(dir==='tl'||dir==='bl'||dir==='ml') newW = startW - dx*2;
 
                     if(newW > 40) {
@@ -973,7 +979,6 @@
                         if(typeStr === 'img') { 
                             sObj.h = newW * aspect; parent.style.height = sObj.h + 'px'; 
                         } else if(typeStr === 'txt') {
-                            // Kéo góc -> Phóng to size chữ
                             if(dir === 'tl' || dir === 'tr' || dir === 'bl' || dir === 'br') {
                                 let ratio = newW / startW;
                                 sObj.fsize = startFsize * ratio;
@@ -991,7 +996,7 @@
             }
         });
 
-        // 3. XOAY ẢNH VÀ CHỮ (KÈM SNAP TỪ TÍNH GÓC 15 ĐỘ)
+        // 3. XOAY ẢNH VÀ CHỮ (KÈM SNAP TỪ TÍNH)
         document.querySelectorAll('.ct-rotate-handle').forEach(rotH => {
             rotH.addEventListener('mousedown', startRot); rotH.addEventListener('touchstart', startRot, {passive: false});
             function startRot(e) {
@@ -1011,7 +1016,6 @@
                     let rad = Math.atan2(evM.clientY - cY, evM.clientX - cX);
                     let deg = rad * (180 / Math.PI) - 90; 
                     
-                    // Snap 15 độ
                     let snapAngle = 15;
                     let remainder = Math.abs(deg % snapAngle);
                     if (remainder <= 5 || remainder >= 10) deg = Math.round(deg / snapAngle) * snapAngle;
@@ -1042,7 +1046,6 @@
             let rv = document.getElementById('receiver-view'); rv.style.display = "flex";
             let timeType = document.querySelector('input[name="ct-time-type"]:checked').value;
             
-            // Xây dựng sẵn HTML cho View Nhận (KÍCH HOẠT NHẤN ĐỂ MỞ)
             buildReceiverCardHTML();
 
             if(timeType === 'later') {
@@ -1083,7 +1086,7 @@
             
             let cType = document.getElementById('ct-cardstyle').value;
             let themeO = document.getElementById('ct-outside-theme').value; let bgO = (themeO==='black')?'#111':(themeO==='blue')?'#1a2a6c':(themeO==='pink')?'#ff758c':'#800000';
-            // Căn chỉnh màu CSS cho Phong bì truyền thống
+            
             let pbBack = bgO; 
             let pbFront = (themeO==='black')?'#222':(themeO==='blue')?'#234a9b':(themeO==='pink')?'#ff8fa3':'#a52a2a';
             let pbBot = (themeO==='black')?'#0a0a0a':(themeO==='blue')?'#112240':(themeO==='pink')?'#ffb3c6':'#700000';
@@ -1100,8 +1103,10 @@
             let textStyles = `font-family:${font}; text-align:${align}; font-size:${ctState.text.fsize}px; color:${col}; text-shadow:${txtShadow}; font-weight:${fWeight}; width:${ctState.text.w}px; left:${ctState.text.x}%; top:${ctState.text.y}%; transform: translate(-50%, -50%) rotate(${ctState.text.rot}deg);`;
             let coverTextStyles = `font-family:'Dancing Script', cursive; font-size:${ctState.coverText.fsize}px; color:#fff; text-shadow:0 2px 10px rgba(0,0,0,0.5); text-align:center; width:${ctState.coverText.w}px; left:${ctState.coverText.x}%; top:${ctState.coverText.y}%; transform: translate(-50%, -50%) rotate(${ctState.coverText.rot}deg);`;
 
+            let hintHTML = `<div id="rv-hint">Chạm vào thiệp để mở 👆</div>`;
+
             if(cType === 'book') {
-                container.innerHTML = `
+                container.innerHTML = hintHTML + `
                     <div class="rv-style-book" id="rv-anim-card" onclick="triggerCardOpenAnim()">
                         <div class="rv-bc-inside" style="background:${bgI}">
                             <div class="rv-layer-bg">${imgIHTML}</div>
@@ -1112,11 +1117,8 @@
                             <div class="rv-layer-text rv-object" style="${coverTextStyles}">${document.getElementById('ct-cover-text').value||"For You"}</div>
                         </div>
                     </div>`;
-                document.getElementById('rv-wait').style.display = 'none';
-                container.style.display = 'flex';
-                setTimeout(()=>document.getElementById('rv-anim-card').classList.add('is-ready'), 50);
             } else if (cType === 'env') {
-                container.innerHTML = `
+                container.innerHTML = hintHTML + `
                     <div class="rv-style-env" id="rv-anim-card" onclick="triggerCardOpenAnim()">
                         <div class="rv-ec-back" style="background:${pbBack}"></div>
                         <div class="rv-ec-paper" style="background:${bgI}">
@@ -1126,11 +1128,8 @@
                         <div class="rv-ec-front" style="border-bottom-color:${pbBot}; border-left-color:${pbFront}; border-right-color:${pbFront};"></div>
                         <div class="rv-ec-flap" style="border-top-color:${pbFlap}"></div>
                     </div>`;
-                document.getElementById('rv-wait').style.display = 'none';
-                container.style.display = 'flex';
-                setTimeout(()=>document.getElementById('rv-anim-card').classList.add('is-ready'), 50);
             } else { // flat
-                container.innerHTML = `
+                container.innerHTML = hintHTML + `
                     <div class="rv-style-flat" id="rv-anim-card" onclick="triggerCardOpenAnim()">
                         <div class="rv-fc-front" style="background:${bgO}">
                             <div class="rv-layer-bg">${imgOHTML}</div>
@@ -1141,9 +1140,6 @@
                             <div class="rv-layer-text rv-object" id="rv-text-target" style="${textStyles}"></div>
                         </div>
                     </div>`;
-                document.getElementById('rv-wait').style.display = 'none';
-                container.style.display = 'flex';
-                setTimeout(()=>document.getElementById('rv-anim-card').classList.add('is-ready'), 50);
             }
         }
 
@@ -1151,10 +1147,10 @@
             let cardEl = document.getElementById('rv-anim-card');
             if(cardEl.classList.contains('is-open')) return; 
             
+            document.getElementById('rv-hint').style.display = 'none';
             let cType = document.getElementById('ct-cardstyle').value;
             let msg = document.getElementById('ct-msg-input').value || "Chưa có lời nhắn!";
             
-            // Xử lý Phát Nhạc
             let musicType = document.querySelector('input[name="ct-music-type"]:checked').value;
             if(musicType === 'file' && ctState.audioUrl) { rvAudio.src = ctState.audioUrl; rvAudio.play().catch(e=>{}); } 
             else if (musicType === 'yt') { let yId = extractVideoID(document.getElementById('ct-music-yt').value); if(yId) document.getElementById('rv-yt-container').innerHTML = `<iframe width="1" height="1" src="https://www.youtube.com/embed/${yId}?autoplay=1&controls=0" frameborder="0" allow="autoplay"></iframe>`; }
